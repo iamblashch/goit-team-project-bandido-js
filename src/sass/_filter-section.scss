@@ -1,0 +1,115 @@
+.filter-section {
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+    @media screen and (min-width: 768px) {
+        padding-top: 28px;
+        padding-bottom: 28px;
+    }
+}
+
+.filter-section__container {
+    max-width: 320px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (min-width: 768px) {
+        max-width: 768px;
+
+    }
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown__categories {
+    position: relative;
+    display: inline-block;
+
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+
+}
+
+.dropdown__others {
+    display: none;
+    @media screen and (min-width: 768px) {
+        position: relative;
+        display: inline-block;
+    }
+
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown__btn:hover {
+    color: #ffffff;
+    background-color: #4440F7;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown__content {
+    display: block;
+}
+
+/* Dropdown Button */
+.dropdown__btn {
+    color: #4440F7;
+    padding: 7.5px;
+    font-size: 12px;
+    background: #ffffff;
+    border: 1px solid #4440F7;
+    border-radius: 20px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown__content {
+    display: none;
+    position: absolute;
+    background-color: #F8F8F8;
+    min-width: 168px;
+    box-shadow: (0px 10px 60px rgba(0, 0, 0, 0.1));
+    z-index: 1;
+}
+
+.dropdown__list {
+    list-style: none;
+}
+
+// .dropdown__item {}
+
+/* Links inside the dropdown */
+.dropdown__link {
+    color: #4440F7;
+    padding: 14px 24px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown__content a:hover {
+    text-decoration: underline;
+}
+
+// .datetime-picker__input {}
+
+
+.filter__list {
+    display: none;
+
+    @media screen and (min-width: 768px) {
+        display: block;
+    }
+}
+
+.filter__item-desktop{
+    display: none;
+
+    @media screen and (min-width: 1200px) {
+        display: block;
+    }
+}
