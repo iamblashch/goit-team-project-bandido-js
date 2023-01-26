@@ -1,0 +1,123 @@
+:root {
+  /* FONTS */
+  --main-font: "Manrope", sans-serif;
+  --secondary-font: "Roboto", sans-serif;
+  --toggle-font:"Poppins", sans-serif;
+  /* BACKGROUND COLORS */
+  --light-bgc:rgba(244, 244, 244, 1)
+  --dark-bgc: rgba(46, 46, 46, 1);
+  --elements-color: rgba(229, 229, 229, 1);
+  /* TEXT COLORS */
+  --primary-text-color: rgba(17, 19, 33, 1);
+  --accent-color: rgba(75, 72, 219, 1);
+  /* OTHER */
+  --indent: 30px;
+  --items: 4;
+}
+
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+@media screen and (min-width: 767px) {
+  .container {
+    max-width: 768px;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+.header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.logo {
+  font-family: Manrope;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33px;
+  margin-right: 167px;
+}
+
+.nav__search {
+  margin-right: 14px;
+}
+
+.nav__svg {
+  fill: black;
+  color: black;
+}
+
+body {
+  font-style: normal;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  padding-left: 16px;
+  padding-right: 16px;
+  margin: 0 auto;
+}/*# sourceMappingURL=main.css.map */

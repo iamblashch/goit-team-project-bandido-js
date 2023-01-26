@@ -1,3 +1,26 @@
+:root {
+    /* FONTS */
+    --main-font: 'Manrope', sans-serif;
+    --secondary-font: 'Roboto', sans-serif;
+    --toggle-font:'Poppins', sans-serif;
+  
+    /* BACKGROUND COLORS */
+    --light-bgc:rgba(244, 244, 244, 1)
+    --dark-bgc: rgba(46, 46, 46, 1);
+
+    --elements-color: rgba(229, 229, 229, 1);
+  
+    /* TEXT COLORS */
+    --primary-text-color: rgba(17, 19, 33, 1);
+    --accent-color: rgba(75, 72, 219, 1);
+
+  
+    /* OTHER */
+    --indent: 30px;
+    --items: 4;
+  }
+  
+
 .container {
     max-width: 480px;
       margin: 0 auto;
@@ -27,33 +50,186 @@
     
 }
 .logo {
+color:var(--primary-text-color);
+font-family: Manrope;
 font-weight: 700;
 font-size: 24px;
 line-height: 33px;
 margin-right: 167px;
 
+@media screen and (min-width: 767px){
+    max-width: 768px;
+    margin-right: 48px;
+    font-size: 32px;
+    line-height: 44px
+   
+}
+@media screen and(min-width:1200px) {
+    margin-right: 102px;  
+    font-size: 42px;
+    line-height: 57px;
+  }
+
 
 }
 
 .nav__list{
+    @media screen and (max-width: 767px) {
+        display: none;
+            }
+            @media screen and (min-width: 767px){
+                max-width: 768px;
+                margin-right: 32px;
+               
+            }
+            display: flex;
 
+            @media screen and(min-width:1200px) {
+                margin-right: 147px;  
+              }
+            
 }
 
-.nav__item{
-
+.nav__item {
+    font-family: Manrope;
+    font-weight: 700;
+    font-size: 18px;
+line-height: 25px;
 }
+
+.nav__item:not(:last-child) {
+    @media screen and (min-width: 767px){
+        margin-right: 44px;
+    }
+    @media screen and(min-width:1200px) {
+        margin-right: 69px;  
+      }
+   
+}
+
 
 .nav__link {
-
+    position: relative;
 }
 
-.nav__link--current{
 
+.nav__link--current::after{
+    display: block;
+    content: " ";
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: rgba(68, 64, 246, 1);
+    position: absolute;
+    top: 45px;
+    left: 0;
 }
-.nav__search{
-   margin-right: 14px;
+
+.nav__search-bar{
+    @media screen and (max-width: 767px) {
+        display: none;
+            }
+            @media screen and (min-width: 768px){
+                position: relative;
+                
+            }
+    
+            
 }
+
+.input-search{
+    width: 173px;
+    height: 31px;
+    outline: 1px solid transparent;
+    border: 1px solid var(--primary-text-color);
+    border-radius: 20px;
+    font-family: 'Poppins';
+    font-size: 12pt; 
+    color: rgba(17, 19, 33, 1);
+
+    padding: 5px 5px 5px 48px; 
+    vertical-align: middle;
+
+    @media screen and (min-width: 768px){
+        width: 213px;
+        font-size: 14pt;
+        margin-right: 24px;
+    }
+
+    @media screen and(min-width:1200px) {
+        width: 288px;
+        margin-right: 147px;
+    }
+}
+ .nav__search-input{
+    position: absolute;
+    left: 12px;
+    top: 25%;
+ }
+
+
+
 .nav__svg{
-    fill:black;
-    color: black
+    fill: black;
+    @media screen and (min-width: 767px) {
+        display: none;
+            }
+}
+
+.nav__search{
+    margin-right: 14px;
+    @media screen and (min-width: 767px) {
+        display: none;
+            }
+}
+
+.theme-toggle__list{
+    @media screen and (max-width: 767px) {
+        display: none;
+            }
+     @media screen and (min-width: 768px)
+        {max-width: 1279px;
+            display: flex;
+        gap:8px
+    }
+    @media screen and (min-width: 1280px){
+        gap: 12px;
+    }
+    }
+
+
+.theme-toggle__item {
+
+}
+.theme-svg {
+    fill: rgba(95, 103, 117, 1);
+    @media screen and (min-width: 1280px){
+        display: none;
+    }
+}
+
+.theme-svg-current{
+    fill: 
+    rgba(75, 72, 219, 1)
+}
+
+.theme-toggle__text{
+    @media screen and (max-width: 1279px){
+display: none;
+}
+
+    @media screen and (min-width: 1280px){
+        font-family: Poppins;
+        font-size: 18px;
+        line-height: 24px;
+        color: rgba(75, 72, 219, 0.4);
+        text-shadow: rgba(0, 0, 0, 0.25);
+       
+    
+    }
+   
+}
+
+.theme-toggle__text--current{
+    color: rgba(75, 72, 219, 1);
 }
