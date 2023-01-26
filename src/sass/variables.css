@@ -1,0 +1,66 @@
+:root {
+    --black-bg-color: #202025;
+    --white-bg-color: #FCFCFC;
+}
+
+body {
+    font-style: normal;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+ul,
+ol {
+    padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+}
