@@ -1,0 +1,41 @@
+.header{
+    border-bottom:1px solid rgba(0, 0, 0, 0.2);
+}
+.header__container{
+    display: flex;
+    align-items: center;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    
+}
+.logo {
+font-weight: 700;
+font-size: 24px;
+line-height: 33px;
+margin-right: 167px;
+
+
+}
+
+.nav__list{
+
+}
+
+.nav__item{
+
+}
+
+.nav__link {
+
+}
+
+.nav__link--current{
+
+}
+.nav__search{
+   margin-right: 14px;
+}
+.nav__svg{
+    fill:black;
+    color: black
+}
