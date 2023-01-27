@@ -1,14 +1,18 @@
 body {
-    font-style: normal;
+  font-style: normal;
+  background-color: rgba(244, 244, 244, 1);
+  color: var(--primary-text-color);
+  font-family: var(--main-font);
+  margin: 0;
 }
 
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 ul,
 ol {
-    padding: 0;
+  padding: 0;
 }
 
 body,
@@ -27,35 +31,45 @@ figcaption,
 blockquote,
 dl,
 dd {
-    margin: 0;
+  margin: 0;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 input,
 button,
 textarea,
 select {
-    font: inherit;
+  font: inherit;
 }
 
 img {
-    max-width: 100%;
-    display: block;
+  max-width: 100%;
+  display: block;
 }
 
 .container {
-    padding-left: 16px;
-    padding-right: 16px;
-    margin: 0 auto;
+  max-width: 320px;
+  margin: 0 auto;
+
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @media screen and (min-width: 767px) {
+    max-width: 768px;
+  }
+
+  @media screen and (min-width: 1279px) {
+    max-width: 1280px;
+  }
 }
