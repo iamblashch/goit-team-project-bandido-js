@@ -1,19 +1,52 @@
 <div class="menu-container js-menu-container" id="mobile-menu">
-  <button class="menu-toggle js-close-menu">
-    <svg class="menu-toggle__icon" width="24" height="24">
-      <use href="/src/img/symbol-defs.svg#close"></use>
-    </svg>
-  </button>
+  <div class="menu-nav">
+    <a href="index.html" class="logo">News</a>
+
+    <button class="menu-toggle js-close-menu">
+      <svg class="menu-toggle__icon" width="24" height="24">
+        <use href="/src/img/symbol-defs.svg#close"></use>
+      </svg>
+    </button>
+  </div>
 
   <ul class="mobile-menu list">
     <li class="mobile-menu-item">
+      <svg class="mobile-menu__icon" width="24" height="24">
+        <use href="/src/img/symbol-defs.svg#home"></use>
+      </svg>
       <a class="mobile-menu-link current" href="./index.html">Home</a>
     </li>
     <li class="mobile-menu-item">
+      <svg class="mobile-menu__icon" width="24" height="24">
+        <use href="/src/img/symbol-defs.svg#favorite"></use>
+      </svg>
       <a class="mobile-menu-link" href="">Favorite</a>
     </li>
     <li class="mobile-menu-item">
+      <svg class="mobile-menu__icon" width="24" height="24">
+        <use href="/src/img/symbol-defs.svg#read"></use>
+      </svg>
       <a class="mobile-menu-link" href="">Read</a>
+    </li>
+  </ul>
+
+  <ul class="mobile-theme-toggle__list">
+    <li class="theme-toggle__item">
+      <svg class="theme-svg" width="21" height="21">
+        <use href="/src/img/symbol-defs.svg#sun"></use>
+      </svg>
+      <span class="theme-toggle__text theme-toggle-light__text--right"
+        >Light</span
+      >
+    </li>
+    <li class="theme-toggle__switcher theme-toggle__switcher--light"></li>
+    <li class="theme-toggle__item">
+      <svg class="theme-svg" width="21" height="21">
+        <use href="/src/img/symbol-defs.svg#moon"></use>
+      </svg>
+      <span class="theme-toggle__text theme-toggle-light__text--left">
+        Dark</span
+      >
     </li>
   </ul>
 </div>
