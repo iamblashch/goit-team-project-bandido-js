@@ -1,6 +1,7 @@
 <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>
-<symbol id="close" viewBox="0 0 32 32">
+<symbol id="close" viewBox="0 0 32 32" style="stroke: black;">
+
 <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M24 8l-16 16"></path>
 <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M8 8l16 16"></path>
 </symbol>
@@ -9,7 +10,7 @@
 <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M4 8h24"></path>
 <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M4 24h24"></path>
 </symbol>
-<symbol id="favourite" viewBox="0 0 32 32">
+<symbol id="favorite" viewBox="0 0 32 32">
 <path fill="#4440f6" style="fill: var(--color1, #4440f6)" d="M32 16c0 8.837-7.163 16-16 16s-16-7.163-16-16c0-8.837 7.163-16 16-16s16 7.163 16 16z"></path>
 <path fill="none" stroke="#f4f4f4" style="stroke: var(--color2, #f4f4f4)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1" d="M22.63 10.457c-0.383-0.383-0.838-0.687-1.338-0.895s-1.037-0.314-1.579-0.314c-0.542 0-1.078 0.107-1.579 0.314s-0.955 0.511-1.338 0.895l-0.795 0.795-0.795-0.795c-0.774-0.774-1.823-1.208-2.918-1.208s-2.144 0.435-2.918 1.208c-0.774 0.774-1.208 1.823-1.208 2.918s0.435 2.144 1.208 2.917l6.63 6.63 6.63-6.63c0.383-0.383 0.687-0.838 0.895-1.338s0.314-1.037 0.314-1.579c0-0.542-0.107-1.078-0.314-1.579s-0.512-0.955-0.895-1.338v0z"></path>
 </symbol>
