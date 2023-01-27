@@ -1,0 +1,152 @@
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @media screen and (min-width: 767px) {
+    max-width: 768px;
+  }
+
+  @media screen and (min-width: 1279px) {
+    max-width: 1280px;
+  }
+}
+
+.section-news {
+  padding-top: 32px;
+  padding-bottom: 60px;
+}
+
+.news-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.news-item {
+  width: 395;
+  margin-right: 30px;
+  margin-bottom: 40px;
+  justify-content: space-between;
+
+  // &:hover,
+  // &:focus {
+  //   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+  //     1px 4px 6px rgba(0, 0, 0, 0.16);
+
+  //   border-radius: 2px;
+  // }
+}
+
+.news-item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.news-item:nth-last-child(-n + 3) {
+  margin-bottom: 0;
+}
+
+.title {
+  width: 353;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+
+  margin-bottom: 20px;
+  margin-top: 20px;
+
+  color: $primary-text-color-light-theme;
+}
+
+.subtitle {
+  width: 353;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.3;
+
+  margin-bottom: 20px;
+
+  color: $primary-text-color-light-theme;
+}
+
+.other-line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.date {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+
+  color: $secondary-text-color;
+}
+
+.hyperlink {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+
+  margin-right: 19px;
+
+  color: $accent-color;
+}
+
+.news-thumb {
+  position: relative;
+}
+
+.link-add {
+  position: absolute;
+  display: flex;
+  align-items: center;
+
+  right: 12px;
+  bottom: 12px;
+
+  background-color: #fff;
+  border-radius: 20px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 12px;
+  // padding-right: 31px;
+
+  max-height: 28px;
+
+  color: $primary-text-color-light-theme;
+
+  cursor: pointer;
+}
+
+.link-add:hover {
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 15%);
+}
+
+.add-icon {
+  margin-left: 3px;
+  margin-right: 13px;
+  stroke: $accent-color;
+  fill: #fff;
+}
+
+.filter-descr {
+  position: absolute;
+  top: 40px;
+  width: 112px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
+
+  color: #ffffff;
+
+  background: rgba(68, 64, 247, 0.7);
+  border-radius: 0px 4px 4px 0px;
+}
