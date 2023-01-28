@@ -38,10 +38,10 @@ function switchThemeToDark(){
         toggle.classList.remove('toggle-light')
         toggle.classList.add('toggle-dark')
 
-        // darktToggleSvg.classList.toggle('is-hidden')
-        // lightToggleSvg.classList.toggle('is-hidden')
+        darktToggleSvg.classList.toggle('is-hidden')
+        lightToggleSvg.classList.toggle('is-hidden')
 
-        // toggleTextRight.style.disabled = true
+        toggleTextRight.style.disabled = true
 
         body.style.backgroundColor = '#2E2E2E';
         navLogo.style.color = 'white';
