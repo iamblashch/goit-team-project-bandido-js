@@ -15,15 +15,96 @@ console.log(' -->', toggleTextRight );
 const navLogo = document.querySelector('.logo')
 const navList= document.querySelector('.nav__list')
 const searchbar = document.querySelector('.input-search')
-const searchIcon = document.querySelector('.nav__svg')
-const burgerMenu = document.querySelector('.burger-menu')
-const lightToggleSvg = document.querySelector('.theme-toggle-svg-light')
-const darktToggleSvg = document.querySelector('.theme-toggle-svg-dark')
-const sunIcon = document.querySelector('.sun-icon')
-const moonIcon = document.querySelector('.moon-icon')
-const toggleEl = document.querySelector('.theme-toggle__switcher--light')
+// const searchIcon = document.querySelector('.nav__svg')
+// const burgerMenu = document.querySelector('.burger-menu')
+// const lightToggleSvg = document.querySelector('.theme-toggle-svg-light')
+// const darktToggleSvg = document.querySelector('.theme-toggle-svg-dark')
+// const sunIcon = document.querySelector('.sun-icon')
+// const moonIcon = document.querySelector('.moon-icon')
+// const toggleEl = document.querySelector('.theme-toggle__switcher--light')
 // const toggleleft = document.querySelector('.theme-toggle-light__text--left')
 // const toggleright = document.querySelector('.theme-toggle-light__text--right')
+
+
+
+toggleTextLeft.addEventListener("click", switchThemeToLight)
+
+toggleTextRight.addEventListener("click", switchThemeToDark)
+
+function switchThemeToDark(){
+      if (toggleTextRight.style.disabled = false) 
+      
+      {
+        toggle.classList.remove('toggle-light')
+        toggle.classList.add('toggle-dark')
+
+        // darktToggleSvg.classList.toggle('is-hidden')
+        // lightToggleSvg.classList.toggle('is-hidden')
+
+        // toggleTextRight.style.disabled = true
+
+        body.style.backgroundColor = '#2E2E2E';
+        navLogo.style.color = 'white';
+        navList.style.color = 'white';
+        searchbar.style.backgroundColor = 'transparent'
+        searchbar.style.color = 'white';
+        searchbar.style.borderSolid = 'red';
+        searchIcon.style.fill = 'white';
+        burgerMenu.style.stroke= 'white';
+        sunIcon.style.color = 'white';
+        moonIcon.style.color = 'white';
+     
+
+        dropDownBtn.style.color ='$theme-svg-on-color';
+        dropDownBtn.style.backgroundColor ='$white-color';
+        searchByDate.style.color ="white";
+       
+    //   } else {
+
+    //     toggle.classList.toggle('toggle-light')
+    //     toggleTextRight.style.disabled = false
+    //     darktToggleSvg.classList.toggle('is-hidden')
+    //     lightToggleSvg.classList.toggle('is-hidden')
+    //     body.classList.add('body-light');
+    //     navLogo.style.color = 'black';
+    //     navList.style.color = 'black';
+    //     searchbar.style.backgroundColor = 'transparent'
+    //     searchbar.style.color = 'black';
+    //     searchbar.style.borderSolid = 'red';
+    //     searchIcon.style.fill = 'black';
+    //     burgerMenu.style.stroke= 'black';
+    //     sunIcon.style.color = 'black';
+    //     moonIcon.style.color = 'black';
+    //     toggleEl.style.borderSolid = 'black';
+        
+      }
+    }
+
+
+    function switchThemeToLight(){
+        if (toggleTextLeft.style.disabled = false) {
+
+            // toggle.classList.toggle('toggle-light')
+            // darktToggleSvg.classList.toggle('is-hidden')
+            // lightToggleSvg.classList.toggle('is-hidden')
+
+            toggleTextLeft.style.disabled = true
+
+        //     body.style.backgroundColor = 'white';
+        //     navLogo.style.color = 'black';
+        //     navList.style.color = 'black';
+        //     searchbar.style.color = 'black';
+        //     searchbar.style.borderSolid = 'black';
+        //     searchIcon.style.stroke = 'black';
+        //     burgerMenu.style.stroke= 'black';
+        //     sunIcon.style.stroke = 'black';
+        //     moonIcon.style.stroke = 'black';
+        //     // toggleEl.style.borderSolid = '$white-color';
+
+    }
+}
+
+
 
 // FILTER SECTION
 const filterEl = document.querySelector('.dropdown__link')
@@ -61,95 +142,6 @@ const aelipsis = document.querySelector('pagination-ellipsis ')
 
 
 // MOBILE MENU
-
-
-// $accent-color: #4440F6;
-// $white-color: #ffffff;
-
-// $primary-text-color-light-theme: #111321;
-// $primary-text-color-dark-theme: #F4F4F4;
-// $secondary-text-color: #A8A8A8;
-
-// $light-theme-bcg-color: #F4F4F4;
-// $dark-theme-bcg-color: #2E2E2E;
-
-// $theme-svg-on-color: #4B48DB;
-// $theme-svg-off-color: #5F6775; 
-
-toggleTextLeft.addEventListener("click", switchThemeToLight)
-// toggle.addEventListener("click", switchThemeToDark)
-toggleTextRight.addEventListener("click", switchThemeToDark)
-
-function switchThemeToDark(){
-      if (toggle.classList.contains('toggle-light')) {
-        // toggle.classList.remove('toggle-light')
-        toggle.classList.toggle('toggle-dark')
-
-        darktToggleSvg.classList.toggle('is-hidden')
-        lightToggleSvg.classList.toggle('is-hidden')
-
-        toggleTextRight.disabled = true
-
-        body.style.backgroundColor = '#2E2E2E';
-        navLogo.style.color = 'white';
-        navList.style.color = 'white';
-        searchbar.style.backgroundColor = 'transparent'
-        searchbar.style.color = 'white';
-        searchbar.style.borderSolid = 'red';
-        searchIcon.style.fill = 'white';
-        burgerMenu.style.stroke= 'white';
-        sunIcon.style.color = 'white';
-        moonIcon.style.color = 'white';
-     
-
-        dropDownBtn.style.color ='$theme-svg-on-color';
-        dropDownBtn.style.backgroundColor ='$white-color';
-        searchByDate.style.color ="white";
-       
-      } else {
-
-        toggle.classList.toggle('toggle-light')
-
-        darktToggleSvg.classList.toggle('is-hidden')
-        lightToggleSvg.classList.toggle('is-hidden')
-        body.classList.add('body-light');
-        navLogo.style.color = 'black';
-        navList.style.color = 'black';
-        searchbar.style.backgroundColor = 'transparent'
-        searchbar.style.color = 'black';
-        searchbar.style.borderSolid = 'red';
-        searchIcon.style.fill = 'black';
-        burgerMenu.style.stroke= 'black';
-        sunIcon.style.color = 'black';
-        moonIcon.style.color = 'black';
-        toggleEl.style.borderSolid = 'black';
-        
-      }
-    }
-
-
-    function switchThemeToLight(){
-        if (toggle.classList.contains('toggle-dark')) {
-
-            toggle.classList.toggle('toggle-light')
-            darktToggleSvg.classList.toggle('is-hidden')
-            lightToggleSvg.classList.toggle('is-hidden')
-
-            toggleTextLeft.disabled = true
-
-        //     body.style.backgroundColor = 'white';
-        //     navLogo.style.color = 'black';
-        //     navList.style.color = 'black';
-        //     searchbar.style.color = 'black';
-        //     searchbar.style.borderSolid = 'black';
-        //     searchIcon.style.stroke = 'black';
-        //     burgerMenu.style.stroke= 'black';
-        //     sunIcon.style.stroke = 'black';
-        //     moonIcon.style.stroke = 'black';
-        //     // toggleEl.style.borderSolid = '$white-color';
-
-    }
-}
 
 // slider.addEventListener('click', changeTheme);
 // sliderr.addEventListener('click', changeThemeMain);
