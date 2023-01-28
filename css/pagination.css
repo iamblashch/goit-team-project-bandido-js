@@ -1,4 +1,4 @@
-@import '../../node_modules/bulma/css/bulma.css';
+@import '../node_modules/bulma/css/bulma.css';
 @media screen and (min-width: 433px) {
   .pagination {
     margin-left: auto;
