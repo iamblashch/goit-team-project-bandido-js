@@ -87,10 +87,7 @@ margin-right: 167px;
             
 }
 
-.nav__item {
-   
-cursor: pointer;
-}
+
 
 .nav__item:not(:last-child) {
     @media screen and (min-width: 767px){
@@ -110,7 +107,8 @@ cursor: pointer;
     font-weight: 700;
     font-size: 18px;
 line-height: 25px;
-color: inherit
+color: inherit;
+cursor: pointer;
 }
 
 
@@ -207,6 +205,7 @@ color: inherit
 .sun-icon{
     stroke:  rgba(75, 72, 219, 1);
     fill: none;
+    cursor: pointer;
     @media screen and (min-width: 1280px){
         display: none;
     }
@@ -214,6 +213,7 @@ color: inherit
 .moon-icon {
     stroke: rgba(95, 103, 117, 1);
   fill: none;
+  cursor: pointer;
     @media screen and (min-width: 1280px){
         display: none;
     }
