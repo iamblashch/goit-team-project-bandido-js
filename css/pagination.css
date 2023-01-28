@@ -1,0 +1,102 @@
+@import '../../node_modules/bulma/css/bulma.css';
+@media screen and (min-width: 433px) {
+  .pagination {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (min-width: 490px) {
+  .pagination {
+    max-width: 470px;
+  }
+}
+
+.pagination-link {
+  min-width: 28px;
+  height: 28px;
+  border-color: #6c6aff;
+}
+
+.pagination-previous {
+  height: 31px;
+  color: #363636;
+  margin-left: 10px;
+  border-color: #6c6aff;
+}
+@media screen and (min-width: 433px) {
+  .pagination-previous {
+    border-color: #6c6aff;
+    width: 82px;
+  }
+}
+
+.pagination-next {
+  height: 31px;
+  color: #363636;
+  border-color: #4440F6;
+}
+@media screen and (min-width: 433px) {
+  .pagination-next {
+    border-color: #6c6aff;
+    width: 82px;
+  }
+}
+@media screen and (min-width: 765px) {
+  .pagination-next {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+}
+
+.pagination-next:focus,
+.pagination-previous:focus,
+.pagination-previous:focus,
+.pagination-previous:hover {
+  border-color: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-color: #6c6aff;
+}
+
+.pagination-next:active,
+.pagination-previous:active,
+.pagination-previous:focus,
+.pagination-previous:hover {
+  border-color: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-color: #6c6aff;
+}
+
+.pagination-ellipsis {
+  color: black;
+}
+
+.svg {
+  margin-right: 10px;
+}
+
+.svg2 {
+  margin-left: 10px;
+}
+
+.pagination-ellipsis_first,
+.pagination-ellipsis_last {
+  padding: 8px;
+}
+
+.hidden-elm {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}/*# sourceMappingURL=pagination.css.map */
