@@ -20,12 +20,14 @@
   "dependencies": {
     "flatpickr": "^4.6.13",
     "@everapi/ipbase-js": "^1.0.6",
+    "axios": "^1.2.5",
     "bulma": "^0.9.4",
     "modern-normalize": "^1.1.0",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
+    "buffer": "^6.0.3",
     "parcel": "^2.6.0",
     "parcel-reporter-clean-dist": "^1.0.4",
     "posthtml-include": "^1.7.4"

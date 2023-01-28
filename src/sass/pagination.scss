@@ -1,84 +1,73 @@
 @import '../../node_modules/bulma/css/bulma.css';
 .pagination {
-  // flex-direction: row;
-
-  @media screen and (min-width: 433px) {
-    margin-left: auto;
-    margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 350px;
+  @media screen and (min-width: 600px) {
+    max-width: 410px;
   }
-  @media screen and (min-width: 490px) {
-    max-width: 470px;
-  }
+        @media screen and (min-width:   1100px) {
+          max-width: 410px;
+        }
 }
 .pagination-link {
   min-width: 28px;
   height: 28px;
-border-color: #6c6aff;
+  border-color: #6c6aff;
 }
 .pagination-previous {
-height: 31px;
-    color: #363636;
+  cursor: pointer;
+  height: 31px;
+  color: #363636;
   margin-left: 10px;
   border-color: #6c6aff;
   @media screen and (min-width: 433px) {
-
     border-color: #6c6aff;
-    width: 82px;
   }
-//   @media screen and (min-width: 490px) {
- 
-//       height: 31px;
-//   }
 }
 .pagination-next {
-height: 31px;
-    color: #363636;
-  border-color: #4440F6;
+  cursor: pointer;
+  height: 31px;
+  color: #363636;
+  border-color: #4440f6;
   @media screen and (min-width: 433px) {
-    border-color: #6c6aff;
-    width: 82px;
+    // border-color: #6c6aff;
   }
-//   @media screen and (min-width: 490px) {
-//     height: 31px;
-//   }
-@media screen and (min-width: 765px) {
-            order: 3;
 
-        }
+  @media screen and (min-width: 600px) {
+    order: 3;
+  }
 }
-.pagination-next:focus,
-.pagination-previous:focus,
+
+.pagination-previous:active,
 .pagination-previous:focus,
 .pagination-previous:hover {
-border-color: transparent;
-box-shadow: none;
-border-color: #6c6aff;
+  // border-color: transparent;
+  box-shadow: none;
+  border-color: #6c6aff;
 }
 
 
 .pagination-next:active,
-.pagination-previous:active,
-.pagination-previous:focus,
-.pagination-previous:hover {
-border-color: transparent;
-box-shadow: none;
-border-color: #6c6aff;
-
-
+.pagination-next:focus,
+.pagination-next:hover {
+  // border-color: transparent;
+  box-shadow: none;
+  border-color: #6c6aff;
 }
 .pagination-ellipsis {
   color: black;
 }
 .svg {
   margin-right: 10px;
-} 
+}
 .svg2 {
-margin-left: 10px;
+  margin-left: 10px;
 }
 
 .pagination-ellipsis_first,
 .pagination-ellipsis_last {
-padding: 8px;
+  padding: 8px;
 }
 .hidden-elm {
   content: '';
@@ -92,5 +81,9 @@ padding: 8px;
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
 
+.pagination-ellipsis_last,
+.pagination-ellipsis_first {
+  padding: 5;
 }
