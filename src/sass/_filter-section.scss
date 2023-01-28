@@ -348,3 +348,58 @@
     fill: $white-color;
 }
 
+// FLATPICKR
+
+.flatpickr-calendar {
+    background-color: #F8F8F8;
+    color: #000000;
+    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.1);
+    border-radius: 20px
+}
+
+.flatpickr-monthDropdown-months {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.4;
+
+    color: #000000;
+}
+
+.flatpickr-weekdays {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.5;
+    color: rgba(60, 60, 67, 0.3);
+}
+
+.dayContainer {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.8;
+
+    color: #000000;
+}
+
+.flatpickr-day.selected {
+    background-color: $accent-color !important;
+    border-color: $accent-color !important;
+}
+
+.selected:hover,
+.selected:focus {
+    background-color: $accent-color !important;
+    border-color: $accent-color !important;
+}
+
+.flatpickr-prev-month {
+    fill: $accent-color !important;
+    stroke: $accent-color !important;
+}
+
+.flatpickr-next-month {
+    fill: $accent-color !important;
+    stroke: $accent-color !important;
+}

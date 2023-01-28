@@ -4,8 +4,8 @@ import "flatpickr/dist/flatpickr.min.css";
 const dateInputEl = document.querySelector('#datetime-picker');
 const API_KEY = 'ef883f39deda4d31b974aca841c64d64';
 
-function makeFetchByDate(selectedDate) {
-    return fetch(`https://newsapi.org/v2/everything?q=cat&from=${selectedDate}&to=${selectedDate}&apiKey=${API_KEY}`)
+function makeFetchByDate(selectedDate, keyword) {
+    return fetch(`https://newsapi.org/v2/everything?q=${keyword}&from=${selectedDate}&to=${selectedDate}&apiKey=${API_KEY}`)
         .then(response => {
             if (!response.ok) {
       throw new Error(response.status);
@@ -19,6 +19,13 @@ const options = {
     dateFormat: 'd/m/Y',
     maxDate: new Date(),
     defaultDate: new Date(),
+    shorthand: true,
+    locale: {
+        firstDayOfWeek: 1,
+        // weekdays: {
+        //     shorthand: ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+        // },
+    },
 
     onChange(selectedDates) {
         let ourDate = new Date(selectedDates);
@@ -29,7 +36,7 @@ const options = {
 
         // ourDate = ourDate.toISOString().split('T')[0];
 
-        const fetch = makeFetchByDate(ourDateArr)
+        const fetch = makeFetchByDate(ourDateArr, 'ukraine')
             .then(data => console.log(data))
             .catch(error => console.log(error))
         return fetch
@@ -37,10 +44,3 @@ const options = {
 }
 
 const fp = flatpickr(dateInputEl, options);
-const fpDivEl = document.querySelector('.flatpickr-calendar');
-const fpPrevMonthArrowEl = document.querySelector('.flatpickr-prev-month');
-const fpNextMonthArrowEl = document.querySelector('.flatpickr-next-month');
-
-fpDivEl.style.cssText = 'background-color:#F8F8F8; color:#000000; box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.1);border-radius: 20px';
-fpPrevMonthArrowEl.style.cssText = 'fill:#4440F6';
-fpNextMonthArrowEl.style.cssText = 'fill:#4440F6';
