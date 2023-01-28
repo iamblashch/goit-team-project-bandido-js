@@ -22,8 +22,8 @@ const darktToggleSvg = document.querySelector('.theme-toggle-svg-dark')
 const sunIcon = document.querySelector('.sun-icon')
 const moonIcon = document.querySelector('.moon-icon')
 const toggleEl = document.querySelector('.theme-toggle__switcher--light')
-const toggleleft = document.querySelector('.theme-toggle-light__text--left')
-const toggleright = document.querySelector('.theme-toggle-light__text--right')
+// const toggleleft = document.querySelector('.theme-toggle-light__text--left')
+// const toggleright = document.querySelector('.theme-toggle-light__text--right')
 
 // FILTER SECTION
 const filterEl = document.querySelector('.dropdown__link')
@@ -88,6 +88,8 @@ function switchThemeToDark(){
         darktToggleSvg.classList.toggle('is-hidden')
         lightToggleSvg.classList.toggle('is-hidden')
 
+        toggleTextRight.disabled = true
+
         body.style.backgroundColor = '#2E2E2E';
         navLogo.style.color = 'white';
         navList.style.color = 'white';
@@ -98,9 +100,7 @@ function switchThemeToDark(){
         burgerMenu.style.stroke= 'white';
         sunIcon.style.color = 'white';
         moonIcon.style.color = 'white';
-        toggleEl.style.borderSolid = 'white';
-        // toggleleft.style.color = '$light-theme-bcg-color';
-        // toggleright.style.color = '#4440F7';
+     
 
         dropDownBtn.style.color ='$theme-svg-on-color';
         dropDownBtn.style.backgroundColor ='$white-color';
@@ -129,46 +129,27 @@ function switchThemeToDark(){
 
 
     function switchThemeToLight(){
-        if (toggle.classList.contains('toggle-light')) {
-            body.style.backgroundColor = 'white';
-            // toggle.style.backgroundColor = '$accent-color';
-            // navLogo.style.color = '$light-theme-bcg-color';
-            // navItem .style.color = '$light-theme-bcg-color';
-            // searchbar.style.color = '$light-theme-bcg-color';
-            // searchbar.style.borderSolid = '$light-theme-bcg-color';
-            // searchIcon.style.stroke = '$light-theme-bcg-color';
-            // burgerMenu.style.stroke= '$light-theme-bcg-color';
-            // sunIcon.style.color = '$theme-svg-off-color';
-            // moonIcon.style.color = '$theme-svg-on-color';
-            // toggleEl.style.borderSolid = '$white-color';
+        if (toggle.classList.contains('toggle-dark')) {
 
-    }}
-// / ****************mobbbbbbbb*************
-// const light = document.querySelector('#checkbox__light');
-// const black = document.querySelector('#checkbox__dark');
-// const slider = document.querySelector('#slider_round');
+            toggle.classList.toggle('toggle-light')
+            darktToggleSvg.classList.toggle('is-hidden')
+            lightToggleSvg.classList.toggle('is-hidden')
 
-// // ***************deskkkkkkkk****************
-// const lightt = document.querySelector('#checkbox__lightt');
-// const blackk = document.querySelector('#checkbox__darkk');
-// const sliderr = document.querySelector('#slider_roundd');
+            toggleTextLeft.disabled = true
 
-// // ******************************************************************
+        //     body.style.backgroundColor = 'white';
+        //     navLogo.style.color = 'black';
+        //     navList.style.color = 'black';
+        //     searchbar.style.color = 'black';
+        //     searchbar.style.borderSolid = 'black';
+        //     searchIcon.style.stroke = 'black';
+        //     burgerMenu.style.stroke= 'black';
+        //     sunIcon.style.stroke = 'black';
+        //     moonIcon.style.stroke = 'black';
+        //     // toggleEl.style.borderSolid = '$white-color';
 
-// const dropBTN = document.querySelector('.dropbtn');
-// const dropBTNMob = document.querySelector('.dropbtn-mob');
-// const dropBTNDesk = document.querySelector('.dropdown-content-desk');
-// const bodyMain = document.querySelector('.body');
-// const siteNavLink = document.querySelector('.site-nav__link');
-// const imputHeader = document.querySelector('.imput__header');
-// const productTitle = document.querySelector('.product__title');
-// const iconMenu = document.querySelector('.icon__menu');
-// const backdropMob = document.querySelector('.backdrop-mob');
-// const dropdownContent = document.querySelector('.dropdown-content button');
-// const favoriteI = document.querySelector('.favorite-ingridients');
-// const mobMenuItem = document.querySelector('.mob-menu__link');
-// const productTiteitle = document.querySelector('.product__title');
-
+    }
+}
 
 // slider.addEventListener('click', changeTheme);
 // sliderr.addEventListener('click', changeThemeMain);
