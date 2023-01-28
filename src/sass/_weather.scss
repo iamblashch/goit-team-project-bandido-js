@@ -1,0 +1,159 @@
+.weather-container {
+    width: 288px;
+    height: 469px;
+
+    padding: 32px 36px;
+
+    text-align: center;
+    background-color: $accent-color;  
+    border-radius: 4px;
+
+    float: right;
+
+    @media screen and (min-width: 767px){
+        width: 353px;
+        height: 675px;
+        padding: 40px 32px 60px 32px;
+    }
+    
+    @media screen and (min-width:1279px) {
+        width: 395px;
+        padding: 40px 53px 60px 53px;
+     }
+}
+
+.weather-and-location {
+    display: flex;
+
+    padding-top: 5px;
+    margin-bottom: 40px;
+
+    @media screen and (min-width: 767px){
+        margin-bottom: 81px;
+    }
+}
+
+.degrees {
+    margin-top: 4px;
+    padding-right: 1px;
+    margin-bottom: 13px;
+
+    font-weight: 400;
+    font-size: 55px;
+    line-height: 64px;
+
+    color: $white-color;
+
+    border-right: 1px solid $white-color;
+
+    @media screen and (min-width: 767px) {
+        padding-right: 8px;
+        padding-bottom: 5px;
+        margin-bottom: 8px;
+
+        font-size: 64px;
+        line-height: 75px;
+    }
+}
+
+.location-box {
+    padding-left: 11px;
+    text-align: left;
+
+    @media screen and (min-width: 767px) {
+        padding-left: 15px;
+    }
+}
+
+.sky {
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 5px;
+
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+
+    color: $white-color;
+
+    @media screen and (min-width: 767px) {
+        font-size: 36px;
+        line-height: 42px;
+        margin-bottom: 3px;
+    }
+}
+
+.current-city__icon-location {
+    margin-right: 4px;
+
+    width: 14px;
+    height: 16px;
+}
+
+.current-city {
+    padding: 8px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: $white-color;
+    background-color: rgba(254, 254, 255, 0.3);
+    border-radius: 10px;
+
+    @media screen and (min-width: 767px) {
+        font-size: 20px;
+        line-height: 23px;
+    }
+}
+
+
+.weatheh-image {
+    width: 148px;
+    height: 141px;
+
+    margin: 0 auto;
+    margin-bottom: 40px;
+
+    @media screen and (min-width: 767px) {
+        width: auto;
+        height: auto;
+
+        margin-bottom: 90px;
+    }
+}
+
+.current-data {
+    margin-bottom: 37px;
+
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 33px;
+    text-align: center;
+
+    color: $white-color;
+
+    @media screen and (min-width: 767px) {
+        font-size: 36px;
+        line-height: 42px;
+    }
+}
+
+.weather-for-week {
+    text-decoration: none;
+    padding: 8px 14px;
+    margin: 0 auto;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: $white-color;
+    background-color: rgba(254, 254, 255, 0.3);
+    border-radius: 10px;
+
+    @media screen and (min-width: 767px) {
+        font-size: 20px;
+        line-height: 23px;
+    }
+}
