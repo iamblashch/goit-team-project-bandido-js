@@ -1,4 +1,82 @@
 @import '../node_modules/bulma/css/bulma.css';
+body {
+  font-style: normal;
+  background-color: rgb(244, 244, 244);
+  color: var(--primary-text-color);
+  font-family: var(--main-font);
+  margin: 0;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul,
+ol {
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: 320px;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+@media screen and (min-width: 767px) {
+  .container {
+    max-width: 768px;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
 :root {
   /* FONTS */
   --main-font: "Manrope", sans-serif;
@@ -11,9 +89,6 @@
   /* TEXT COLORS */
   --primary-text-color: rgba(17, 19, 33, 1);
   --accent-color: rgba(75, 72, 219, 1);
-  /* OTHER */
-  --indent: 30px;
-  --items: 4;
 }
 
 .container {
@@ -147,7 +222,7 @@
   border: 1px solid var(--primary-text-color);
   border-radius: 20px;
   font-family: "Poppins";
-  font-size: 12pt;
+  font-size: 12px;
   color: rgb(17, 19, 33);
   padding: 5px 5px 5px 48px;
   vertical-align: middle;
@@ -155,7 +230,7 @@
 @media screen and (min-width: 768px) {
   .input-search {
     width: 213px;
-    font-size: 14pt;
+    font-size: 14px;
     margin-right: 24px;
   }
 }
@@ -166,7 +241,7 @@
   }
 }
 
-.nav__search-input {
+.nav__search-icon {
   position: absolute;
   left: 12px;
   top: 25%;
@@ -210,12 +285,20 @@
   }
 }
 
-.theme-svg {
-  fill: rgb(95, 103, 117);
-  stroke: rgb(95, 103, 117);
+.sun-icon {
+  stroke: rgb(75, 72, 219);
 }
 @media screen and (min-width: 1280px) {
-  .theme-svg {
+  .sun-icon {
+    display: none;
+  }
+}
+
+.moon-icon {
+  fill: rgb(95, 103, 117);
+}
+@media screen and (min-width: 1280px) {
+  .moon-icon {
     display: none;
   }
 }
@@ -240,6 +323,10 @@
 
 .theme-toggle-light__text--left {
   color: rgb(75, 72, 219);
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .theme-toggle-dark__text--left {
@@ -248,127 +335,20 @@
 
 .theme-toggle-light__text--right {
   color: #5F6775;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .theme-toggle-dark__text--right {
   color: rgb(68, 64, 247);
 }
 
-.theme-toggle__switcher--light {
-  width: 40px;
-  height: 20px;
-  border-radius: 20px;
-  border: 0.6px solid rgb(75, 72, 219);
-  position: relative;
-}
-
-.theme-toggle__switcher--light::after {
-  content: "";
-  position: absolute;
-  top: 1px;
-  left: 1px;
-  width: 17px;
-  height: 17px;
-  border-radius: 50%;
-  background-color: rgb(75, 72, 219);
-}
-
-.theme-toggle__switcher--dark {
-  width: 40px;
-  height: 20px;
-  border-radius: 20px;
-  border: 0.6px solid white;
-  background-color: rgb(75, 72, 219);
-  position: relative;
-}
-
-.theme-toggle__switcher--dark::after {
-  content: "";
-  position: absolute;
-  top: 1px;
-  left: 21px;
-  width: 17px;
-  height: 17px;
-  border-radius: 50%;
-  background-color: white;
-}
-
-body {
-  font-style: normal;
-  background-color: rgb(244, 244, 244);
-  color: var(--primary-text-color);
-  font-family: var(--main-font);
-  margin: 0;
-}
-
-html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-ul,
-ol {
-  padding: 0;
-}
-
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-ol,
-li,
-figure,
-figcaption,
-blockquote,
-dl,
-dd {
-  margin: 0;
-}
-
-ul {
-  list-style: none;
-}
-
-li {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-.container {
-  max-width: 320px;
-  margin: 0 auto;
-  padding-left: 16px;
-  padding-right: 16px;
-}
-@media screen and (min-width: 767px) {
-  .container {
-    max-width: 768px;
-  }
-}
-@media screen and (min-width: 1279px) {
-  .container {
-    max-width: 1280px;
-  }
+.theme-toggle {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .filter-section {
@@ -1194,6 +1174,15 @@ img {
   color: #ffffff;
   background: rgba(68, 64, 247, 0.7);
   border-radius: 0px 4px 4px 0px;
+}
+
+body {
+  font-family: var(--main-font);
+  margin: 0;
+}
+
+.body-dark {
+  background-color: #686868;
 }
 
 @media screen and (min-width: 433px) {
