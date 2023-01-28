@@ -27,6 +27,7 @@
   
       padding-left: 16px;
       padding-right: 16px;
+      
   
   
      @media screen and (min-width: 767px){
@@ -233,15 +234,20 @@ display: none;
    
 }
 
-.theme-toggle-light__text--right{
+.theme-toggle-light__text--left{
     color: rgba(75, 72, 219, 1);
 }
-.theme-toggle-dark__text--right{
-
+.theme-toggle-dark__text--left{
+color:rgba(244, 244, 244, 1);
 }
 
-.theme-toggle__text--left{
+.theme-toggle-light__text--right{
     color: #5F6775;
+}
+
+.theme-toggle-dark__text--right{
+    color: rgba(68, 64, 247, 1);
+    ;
 }
 
 .theme-toggle__switcher--light{
