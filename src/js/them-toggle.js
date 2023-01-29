@@ -15,6 +15,9 @@ const searchIcon = document.querySelector('.nav__search-icon');
 const burgerMenu = document.querySelector('.burger-menu');
 
 // FILTER SECTION
+const filterLink = document.querySelector('.filter__link')
+const filterDesctop =document.querySelector('.filter__link-desktop')
+const filterDropDownBtn = document.querySelector('.dropdown__btn')
 const arrowUp = document.querySelector('.dropdown__btn-icon-arrow-up');
 const arrowDown = document.querySelector('.dropdown__btn-icon-arrow-down ');
 const searchByDate = document.querySelector('.filter-section__text');
@@ -38,15 +41,19 @@ const aelipsis = document.querySelector('pagination-ellipsis ');
 
 
 
-// sunIcon.addEventListener("click", onLightBtnClick)
+sunIcon.addEventListener("click", switchThemeToLight)
 moonIcon.addEventListener('click', switchThemeToDark);
+toggleTextLeft.addEventListener("click", switchThemeToLight)
+toggleTextRight.addEventListener('click', switchThemeToDark);
 
 
 function switchThemeToDark() {
   moonIcon.disabled = true;
   sunIcon.disabled = false;
+  toggleTextRight.disabled= true;
+  toggleTextLeft.disabled = false;
 
-  if (moonIcon.disabled) {
+  if (moonIcon.disabled || toggleTextLeft.disabled ) {
     body.style.backgroundColor = '#2E2E2E';
     darktToggleSvg.classList.toggle('is-hidden');
     lightToggleSvg.classList.toggle('is-hidden');
@@ -63,6 +70,9 @@ function switchThemeToDark() {
     navList.style.color = '#F4F4F4';
 
     // FILTER SECTION
+    filterLink.style.backgroundColor ='#FFFFFF'
+    filterDesctop.style.backgroundColor ='#FFFFFF'
+    filterDropDownBtn.style.backgroundColor ='#FFFFFF'
     arrowDown.style.fill = '#4440F6';
     searchByDate.style.color = '#F4F4F4';
     datetimePicker.style.border = '1px solid #F4F4F4';
@@ -76,6 +86,44 @@ function switchThemeToDark() {
   }
 }
 
-
+function switchThemeToLight(){
+    moonIcon.disabled = false;
+    sunIcon.disabled = true;
+   
+    toggleTextRight.disabled= false;
+    toggleTextLeft.disabled = true;
+  
+    if (sunIcon.disabled  || toggleTextLeft.disabled ) {
+      body.style.backgroundColor = '#F4F4F4';
+      darktToggleSvg.classList.toggle('is-hidden');
+      lightToggleSvg.classList.toggle('is-hidden');
+      // HEADER SECTION
+      toggleTextLeft.style.color = '#4B48DB';
+      toggleTextRight.style.color = '#5F6775';
+      sunIconSvg.style.stroke = '#4B48DB';
+      moonIconSvg.style.stroke = '#5F6775';
+      burgerMenu.style.stroke = '#111321';
+      searchIcon.style.fill = '#111321';
+      searchbar.style.color = '#111321';
+      searchbar.style.border = '1px solid #111321';
+      navLogo.style.color = '#111321';
+      navList.style.color = '#111321';
+  
+      // FILTER SECTION
+      filterLink.style.backgroundColor = 'transparent';
+      filterDesctop.style.backgroundColor ='transparent'
+      filterDropDownBtn.style.backgroundColor = 'transparent'
+      arrowDown.style.fill = '#4B48DB';
+      searchByDate.style.color = '#111321';
+      datetimePicker.style.border = '1px solid #111321';
+      dateArrowUp.style.fill = '#A2A2A2';
+      dateArrowDown.style.fill = '#A2A2A2';
+  
+      // NEWS SECTION
+      newsTitle.style.color = '#111321';
+      newsSubtitle.style.color = '#111321';
+     
+    } 
+}
 
 

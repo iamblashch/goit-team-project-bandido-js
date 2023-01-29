@@ -16,7 +16,10 @@
 
   
   }
-  
+
+ .is-hidden {
+    display:none
+ } 
 
 .container {
     max-width: 480px;
@@ -202,7 +205,7 @@ cursor: pointer;
 
 
 .theme-toggle__item {
-
+background-color: transparent;
 }
 
 .sun-icon{
@@ -299,6 +302,11 @@ color:rgba(244, 244, 244, 1);
 .toggle-dark{
     height: 20px;
     width: 40px;
+}
+
+
+.burger-menu{
+    fill: #111321;
 }
 // .theme-toggle__switcher--light{
 //     width: 40px;
