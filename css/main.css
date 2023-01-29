@@ -222,6 +222,7 @@ img {
   font-family: "Poppins";
   font-size: 12px;
   color: rgb(17, 19, 33);
+  background-color: transparent;
   padding: 5px 5px 5px 48px;
   vertical-align: middle;
 }
@@ -243,6 +244,7 @@ img {
   position: absolute;
   left: 12px;
   top: 25%;
+  fill: #111321;
 }
 
 .nav__svg {
@@ -286,21 +288,23 @@ img {
 .sun-icon {
   stroke: rgb(75, 72, 219);
   fill: none;
-  cursor: pointer;
-}
-@media screen and (min-width: 1280px) {
-  .sun-icon {
-    display: none;
-  }
 }
 
 .moon-icon {
   stroke: rgb(95, 103, 117);
   fill: none;
+}
+
+.tablet-theme-light,
+.tablet-theme-dark {
   cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
 }
 @media screen and (min-width: 1280px) {
-  .moon-icon {
+  .tablet-theme-light,
+.tablet-theme-dark {
     display: none;
   }
 }
@@ -351,6 +355,16 @@ img {
   border: none;
   background-color: transparent;
   cursor: pointer;
+  height: 20px;
+  width: 40px;
+}
+
+.toggle-light {
+  height: 20px;
+  width: 40px;
+}
+
+.toggle-dark {
   height: 20px;
   width: 40px;
 }
@@ -619,6 +633,7 @@ img {
     font-weight: 700;
     font-size: 18px;
     line-height: 1.36;
+    color: #111321;
   }
 }
 
@@ -650,6 +665,8 @@ img {
   border-radius: 20px;
   outline: 1px solid transparent;
   outline-offset: -1px;
+  background-color: transparent;
+  color: white;
 }
 @media screen and (min-width: 768px) {
   .datetime-picker__input {
