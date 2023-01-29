@@ -245,6 +245,7 @@
         font-weight: 700;
         font-size: 18px;
         line-height: 1.36;
+        color:#111321;
     }
 }
 
@@ -269,6 +270,8 @@
     border-radius: 20px;
     outline: 1px solid transparent;
     outline-offset: -1px;
+    background-color: transparent;
+    color: white;
 
     @media screen and (min-width: 768px) {
         width: 168px;

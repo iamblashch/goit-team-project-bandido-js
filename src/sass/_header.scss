@@ -146,6 +146,7 @@ cursor: pointer;
     font-family: 'Poppins';
     font-size: 12px; 
     color: rgba(17, 19, 33, 1);
+    background-color: transparent;
 
     padding: 5px 5px 5px 48px; 
     vertical-align: middle;
@@ -166,6 +167,7 @@ cursor: pointer;
     position: absolute;
     left: 12px;
     top: 25%;
+    fill: #111321;
  }
 
 
@@ -202,22 +204,36 @@ cursor: pointer;
 .theme-toggle__item {
 
 }
+
 .sun-icon{
     stroke:  rgba(75, 72, 219, 1);
     fill: none;
-    cursor: pointer;
-    @media screen and (min-width: 1280px){
-        display: none;
-    }
+    // cursor: pointer;
+    // @media screen and (min-width: 1280px){
+    //     display: none;
+    // }
 }
 .moon-icon {
     stroke: rgba(95, 103, 117, 1);
   fill: none;
-  cursor: pointer;
+//   cursor: pointer;
+//     @media screen and (min-width: 1280px){
+//         display: none;
+//     }
+}
+
+.tablet-theme-light,
+.tablet-theme-dark {
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    background-color: transparent;
     @media screen and (min-width: 1280px){
         display: none;
     }
 }
+
+
 
 .theme-svg-dark{
     fill: 
@@ -250,6 +266,7 @@ background-color: transparent;
     cursor: pointer;
 
 }
+
 .theme-toggle-dark__text--left{
 color:rgba(244, 244, 244, 1);
 }
@@ -276,10 +293,12 @@ color:rgba(244, 244, 244, 1);
 }
 
 .toggle-light{
-
+    height: 20px;
+    width: 40px;
 }
 .toggle-dark{
-    
+    height: 20px;
+    width: 40px;
 }
 // .theme-toggle__switcher--light{
 //     width: 40px;
