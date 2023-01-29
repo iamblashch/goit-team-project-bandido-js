@@ -10,7 +10,7 @@ let dateSearchAPI = ``
 // const API_KEY = `ef883f39deda4d31b974aca841c64d64`
 const API_KEY = `52d268786081454ea8f67dd976d67718`;
 const lastBtn = document.querySelector(`.last-btn`);
-const sectionCard = document.querySelector(`.card_list`);
+const sectionCard = document.querySelector(`.news-list`);
 const ListenerNumberPage = document.querySelector(`.pagination`);
 const filterButton = document.querySelector(`.filter__list`)
 
@@ -18,11 +18,10 @@ const filterButton = document.querySelector(`.filter__list`)
 const numberPageApi = (lastBtn.textContent = 12);
 
 function newsAPI() {
-      console.log(numberPage)
       return new Promise((resolve, reject) => {
       axios
         .get(
-          `https://newsapi.org/v2/everything?q=${nameSearchAPI}&from=${dateSearchAPI}&to=${dateSearchAPI}&sortBy=popularity&pageSize=6&page=${numberPage}&apiKey=${API_KEY}`
+          `https://newsapi.org/v2/everything?q=${nameSearchAPI}&from=${dateSearchAPI}&to=${dateSearchAPI}&sortBy=popularity&pageSize=8&page=${numberPage}&apiKey=${API_KEY}`
         )
         .then(response => {
           resolve(response);
@@ -47,9 +46,7 @@ function newsAPI() {
 
           let formattedDate = news.publishedAt.toString().slice(0,10);
           let replaceDat = formattedDate.replace(`-`, '/').replace(`-`, '/');
-          return `<div class="news">
-      <ul class="news-list">
-        <li class="news-item">
+          return `<li class="news-item">
           <div class="news-thumb">
             <img
               class="img-news"
@@ -78,9 +75,7 @@ function newsAPI() {
               <p class="hyperlink"><a href="${news.url}">Read more</a></p>
             </div>
           </div>
-        </li>
-      </ul>
-    </div>`;
+        </li>`;
       }
     });
     sectionCard.innerHTML = markupArray.join('');
