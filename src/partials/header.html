@@ -18,7 +18,7 @@
           class="input-search"
         />
         <svg
-          class="nav__search-input"
+          class="nav__search-icon"
           width="
                20px"
           height="
@@ -49,28 +49,44 @@
           height="
                 24px"
         >
-          <use href="/src/img/symbol-defs.svg#burger-menu"></use>
+          <use href="/src/img/symbol-defs.svg#burger-menu" class="burger-menu"></use>
         </svg>
       </button>
-      <ul class="theme-toggle__list">
-        <li class="theme-toggle__item">
-          <svg class="theme-svg" width="21" height="21">
-            <use href="/src/img/symbol-defs.svg#sun"></use>
-          </svg>
-          <span class="theme-toggle__text theme-toggle-light__text--right"
-            >Light</span
-          >
-        </li>
-        <li class="theme-toggle__switcher theme-toggle__switcher--light"></li>
-        <li class="theme-toggle__item">
-          <svg class="theme-svg" width="21" height="21">
-            <use href="/src/img/symbol-defs.svg#moon"></use>
-          </svg>
-          <span class="theme-toggle__text theme-toggle-light__text--left">
+
+
+         <ul class="theme-toggle__list">
+            <li class="theme-toggle__item">
+<svg class="sun-icon" width="21" height="21">
+  <use href="/src/img/symbol-defs.svg#sun"></use>
+</svg> 
+<button type="button" class="theme-toggle__text theme-toggle-light__text--left" id="toggle-text-left">Light</button>
+
+
+            </li>
+            <li class="theme-toggle__list">
+<button type="button" class="theme-toggle toggle-light ">
+<img src="/src/img/toggle/toggle-light.png" alt="toggle" class="theme-toggle-svg-light">
+<img src="/src/img/toggle/toggle-dark.png" alt="toggle" class="theme-toggle-svg-dark is-hidden">
+</button>
+            </li >
+            <li class="theme-toggle__item">
+                <svg class="moon-icon" width="21" height="21">
+                    <use href="/src/img/symbol-defs.svg#moon"></use>
+                  </svg>
+                  <button type="button" class="theme-toggle__text theme-toggle-light__text--right" id="toggle-text-right">Dark</button>
+              
+            </li>
+         </ul>
+
+
+        </nav>
+      </div>
+    </header>
+          <!-- <span class="theme-toggle__text theme-toggle-light__text--left">
             Dark</span
           >
         </li>
       </ul>
     </nav>
-  </div>
-</header>
+  </div> -->
+<!-- </header> -->

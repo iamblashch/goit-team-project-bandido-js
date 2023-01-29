@@ -1,0 +1,238 @@
+.section-news {
+  padding-top: 14px;
+  padding-bottom: 40px;
+}
+
+.news-item {
+  padding-bottom: 28px;
+  width: 288px;
+}
+
+.news-thumb {
+  position: relative;
+}
+
+.img-news {
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
+
+  @media screen and (max-height: 1279px) {
+    width: 100%;
+  }
+}
+
+.news-list {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.news-item {
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    width: 353;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    padding-bottom: 0px;
+
+    justify-content: space-between;
+
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+
+    &:nth-last-child(-n + 2) {
+      margin-bottom: 0;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 395;
+    margin-right: 30px;
+    margin-bottom: 40px;
+    padding-bottom: 0px;
+    justify-content: space-between;
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+
+    &:nth-last-child(-n + 3) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.filter-descr {
+  position: absolute;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.3;
+
+  color: $white-color;
+
+  background: rgba(68, 64, 247, 0.7);
+  border-radius: 0px 4px 4px 0px;
+
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+
+  top: 40px;
+}
+
+.link-add {
+  position: absolute;
+  display: flex;
+  align-items: center;
+
+  right: 8px;
+  bottom: 12px;
+
+  background-color: #fff;
+  border-radius: 20px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 12px;
+  // padding-right: 31px;
+
+  &.link-add:active {
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 15%);
+    background-color: $accent-color;
+    color: $white-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  max-height: 28px;
+
+  color: $primary-text-color-light-theme;
+
+  @media screen and(min-width:768px) {
+    right: 12px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    &.link-add:hover,
+    &.link-add:focus {
+      box-shadow: 0px 4px 4px rgb(0 0 0 / 15%);
+      background-color: $accent-color;
+      color: $white-color;
+      transition-duration: 250ms;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+}
+
+.add-icon {
+  fill: $white-color;
+  stroke: $accent-color;
+
+  margin-right: 12px;
+  margin-left: 4px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  color: $primary-text-color-light-theme;
+
+  @media screen and (min-width: 768px) {
+    font-size: 32px;
+    line-height: 1.3;
+  }
+}
+
+.subtitle {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.3;
+
+  color: $primary-text-color-light-theme;
+
+  padding-bottom: 20px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.3;
+  }
+}
+
+.other-line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.hyperlink {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.3;
+
+  color: $accent-color;
+
+  transition-property: border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+
+  border-radius: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+
+  &:active {
+    border: 2px solid $accent-color;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    border-radius: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+
+    &:hover,
+    &:focus {
+      border: 2px solid $accent-color;
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+        0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+    }
+  }
+}
+
+.date {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.3;
+
+  color: $secondary-text-color;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+.title:not(.is-spaced) + .subtitle {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.title:not(:last-child) {
+  margin-bottom: 0;
+}

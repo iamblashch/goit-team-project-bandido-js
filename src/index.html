@@ -15,20 +15,25 @@
       href="../node_modules/modern-normalize/modern-normalize.css"
     />
     <link rel="stylesheet" href="./css/variables.css" />
-    <link rel="stylesheet" href="./sass/main.scss" />
+    <link rel="stylesheet" href="../css/main.css" />
+
   </head>
-  <body class="body">
+  <body class="body body-light">
     <!-- ❗️❗️❗️ include (подключение) html  ❗️❗️❗️ -->
 
     <include src="./partials/header.html"></include>
-    <include src="./partials/news-section.html"></include>
-    <include src=""></include>
     <include src="./partials/filter-section.html"></include>
+    <include src="./partials/news-section.html"></include>
     <include src="./partials/mobile-menu.html"></include>
-    <include src=""></include>
+    <include src="./partials/weather.html"></include>
+    <include src="./partials/pagination.html"></include>
     <include src=""></include>
 
     <!-- подключение скриптов -->
+    <link href="
+          https://cdn.jsdelivr.net/npm/bulma@0.9.4/bulma/css/bulma.min.css
+          " rel="stylesheet">
+        </link>
     <script type="module" src="./index.js"></script>
   </body>
 </html>

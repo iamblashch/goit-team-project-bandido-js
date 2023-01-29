@@ -18,6 +18,9 @@
     "url": "https://github.com/goitacademy/parcel-project-template/issues"
   },
   "dependencies": {
+    "flatpickr": "^4.6.13",
+    "@everapi/ipbase-js": "^1.0.6",
+    "bulma": "^0.9.4",
     "modern-normalize": "^1.1.0",
     "normalize.css": "^8.0.1"
   },
