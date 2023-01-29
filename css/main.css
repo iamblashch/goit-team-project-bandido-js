@@ -90,6 +90,10 @@ img {
   --accent-color: rgba(75, 72, 219, 1);
 }
 
+.is-hidden {
+  display: none;
+}
+
 .container {
   max-width: 480px;
   margin: 0 auto;
@@ -120,6 +124,8 @@ img {
           align-items: center;
   padding-top: 24px;
   padding-bottom: 24px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .logo {
@@ -164,7 +170,7 @@ img {
 }
 @media screen and (min-width: 1200px) {
   .nav__list {
-    margin-right: 147px;
+    margin-right: 140px;
   }
 }
 
@@ -184,7 +190,7 @@ img {
   display: block;
   font-family: Manrope;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 25px;
   color: inherit;
   cursor: pointer;
@@ -234,7 +240,7 @@ img {
 @media screen and (min-width: 1200px) {
   .input-search {
     width: 288px;
-    margin-right: 147px;
+    margin-right: 140px;
   }
 }
 
@@ -281,6 +287,10 @@ img {
   .theme-toggle__list {
     gap: 12px;
   }
+}
+
+.theme-toggle__item {
+  background-color: transparent;
 }
 
 .sun-icon {
@@ -359,12 +369,16 @@ img {
 
 .toggle-light {
   height: 20px;
-  width: 40px;
+  width: 52px;
 }
 
 .toggle-dark {
   height: 20px;
   width: 40px;
+}
+
+.burger-menu {
+  fill: #111321;
 }
 
 .filter-section {
@@ -439,7 +453,7 @@ img {
   padding-left: 13px;
   padding-right: 37px;
   color: #4440F6;
-  background: #ffffff;
+  background: transparent;
   border: 1px solid #4440F6;
   border-radius: 20px;
   cursor: pointer;
@@ -575,7 +589,7 @@ img {
     padding-left: 24.5px;
     padding-right: 24.5px;
     color: #4440F6;
-    background: #ffffff;
+    background: transparent;
     border: 1px solid #4440F6;
     border-radius: 20px;
     cursor: pointer;
@@ -595,7 +609,7 @@ img {
     padding-left: 24.5px;
     padding-right: 24.5px;
     color: #4440F6;
-    background: #ffffff;
+    background: transparent;
     border: 1px solid #4440F6;
     border-radius: 20px;
     cursor: pointer;
@@ -961,7 +975,6 @@ img {
   border: none;
   cursor: pointer;
   padding: 0;
-  margin-right: 16px;
 }
 
 @media (min-width: 768px) {
@@ -1086,14 +1099,6 @@ img {
   .mobile-theme-toggle__list {
     display: none;
   }
-}
-
-.theme-toggle__item:not(:last-child) {
-  margin-right: 8px;
-}
-
-.theme-toggle__switcher {
-  margin-right: 8px;
 }
 
 .theme-toggle__switcher .theme-svg {
