@@ -27,9 +27,6 @@
   
       padding-left: 16px;
       padding-right: 16px;
-      
-  
-  
      @media screen and (min-width: 767px){
       max-width: 768px;
      }
@@ -47,6 +44,7 @@
     align-items: center;
     padding-top: 24px;
     padding-bottom: 24px;
+    justify-content: space-around;
     
 }
 .logo {
@@ -85,7 +83,7 @@ margin-right: 167px;
             display: flex;
 
             @media screen and(min-width:1200px) {
-                margin-right: 147px;  
+                margin-right: 140px;  
               }
             
 }
@@ -108,10 +106,10 @@ margin-right: 167px;
     display: block;
     font-family: Manrope;
     font-weight: 700;
-    font-size: 18px;
-line-height: 25px;
-color: inherit;
-cursor: pointer;
+    font-size: 16px;
+    line-height: 25px;
+    color: inherit;
+    cursor: pointer;
 }
 
 
@@ -161,7 +159,7 @@ cursor: pointer;
 
     @media screen and(min-width:1200px) {
         width: 288px;
-        margin-right: 147px;
+        margin-right: 140px;
     }
 }
 
@@ -295,7 +293,7 @@ color:rgba(244, 244, 244, 1);
 
 .toggle-light{
     height: 20px;
-    width: 40px;
+    width: 52px;
 }
 .toggle-dark{
     height: 20px;
