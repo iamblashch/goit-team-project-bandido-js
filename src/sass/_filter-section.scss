@@ -61,7 +61,7 @@
     padding-right: 37px;
 
     color: $accent-color;
-    background: $white-color;
+    background-color: transparent;
     border: 1px solid $accent-color;
     border-radius: 20px;
 
@@ -139,7 +139,7 @@
     padding-right: 14px;
     padding-left: 14px;
 
-    background-color: #F8F8F8;
+    background-color: transparent;
     box-shadow: (0px 10px 60px rgba(0, 0, 0, 0.1));
     z-index: 1;
 
@@ -192,7 +192,7 @@
         padding-right: 24.5px;
 
         color: $accent-color;
-        background: $white-color;
+        background-color: transparent;
         border: 1px solid $accent-color;
         border-radius: 20px;
 
@@ -203,7 +203,7 @@
 .filter__link:hover,
 .filter__link:focus {
     color: $white-color;
-    background: $accent-color;
+    background-color: $accent-color;
 }
 
 .filter__link-desktop {
@@ -214,7 +214,7 @@
         padding-right: 24.5px;
 
         color: $accent-color;
-        background: $white-color;
+        background-color: transparent;
         border: 1px solid $accent-color;
         border-radius: 20px;
 
@@ -225,7 +225,7 @@
 .filter__link-desktop:hover,
 .filter__link-desktop:focus {
     color: $white-color;
-    background: $accent-color;
+    background-color: $accent-color;
 }
 
 .wrapper {
