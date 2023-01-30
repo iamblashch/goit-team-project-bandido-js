@@ -22,7 +22,7 @@
  } 
 
 .container {
-    max-width: 480px;
+    max-width: 767px;
       margin: 0 auto;
   
       padding-left: 16px;
@@ -201,6 +201,8 @@ margin-right: 167px;
     }
 
 .theme-toggle__item {
+    align-items: center;
+  justify-content: center;
 background-color: transparent;
 }
 

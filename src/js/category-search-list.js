@@ -13,7 +13,9 @@ async function getCategoryList() {
     const markupFilterList = response.data.results.map((arr, index) => {
         if (index < 6) {
             return `<li class="filter__item">
-        <a href="#" class="filter__link">${arr.display_name}</a>
+        <button class="js-theme-change">
+          <a href="#" class="filter__link">${arr.display_name}</a>
+        </button>
       </li>`
         }
     }).join('');
