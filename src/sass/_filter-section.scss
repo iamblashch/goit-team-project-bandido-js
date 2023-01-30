@@ -63,6 +63,7 @@
     padding-right: 37px;
 
     color: $accent-color;
+    background-color: transparent;
     background: transparent;
     border: 1px solid $accent-color;
     border-radius: 20px;
@@ -114,8 +115,9 @@
     display: none;
 }
 
-.dropdown__btn:focus+.dropdown__btn-icon-arrow-up,
-.dropdown__btn:hover+.dropdown__btn-icon-arrow-up {
+.dropdown__btn:focus ~ .dropdown__btn-icon-arrow-up,
+.dropdown__btn:hover ~ .dropdown__btn-icon-arrow-up {
+    display: block;
     position: absolute;
     top: 50%;
     right: 13px;
@@ -124,7 +126,6 @@
     height: 14px;
 
     fill: $white-color;
-    stroke: $white-color;
 
     @media screen and (min-width: 768px) {
             right: 24.5px;
@@ -141,7 +142,7 @@
     padding-right: 14px;
     padding-left: 14px;
 
-    background-color: #F8F8F8;
+    background-color: transparent;
     box-shadow: (0px 10px 60px rgba(0, 0, 0, 0.1));
     z-index: 1;
 
@@ -216,9 +217,6 @@
         color: $accent-color;
         background: transparent;
         // border: 1px solid $accent-color;
-        border-radius: 20px;
-
-        cursor: pointer;
     }
 }
 
@@ -226,6 +224,7 @@
 .filter__link:focus {
     color: $white-color;
     // background: $accent-color;
+    background-color: $accent-color;
 }
 
 // .filter__link-desktop {
@@ -239,15 +238,30 @@
 //         background: transparent;
 //         border: 1px solid $accent-color;
 //         border-radius: 20px;
-
 //         cursor: pointer;
 //     }
 // }
+.filter__link-desktop {
+    @media screen and (min-width: 768px) {
+        // padding-top: 7.5px;
+        // padding-bottom: 7.5px;
+        // padding-left: 24.5px;
+        // padding-right: 24.5px;
+
+        color: $accent-color;
+        background-color: transparent;
+        background: transparent;
+        border: 1px solid $accent-color;
+        border-radius: 20px;
+
+        cursor: pointer;
+    }
+}
 
 .filter__link-desktop:hover,
 .filter__link-desktop:focus {
     color: $white-color;
-    background: $accent-color;
+    background-color: $accent-color;
 }
 
 .wrapper {
@@ -287,21 +301,32 @@
 .datetime-picker__input {
     width: 151px;
     height: 31px;
-    
+
+    padding-left: 45px;
+
+    color: #A2A2A2;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.75;
+
     border: 1px solid $primary-text-color-light-theme;
     border-radius: 20px;
     outline: 1px solid transparent;
     outline-offset: -1px;
     background-color: transparent;
-    color: white;
+    // color: white;
 
     @media screen and (min-width: 768px) {
         width: 168px;
+        font-size: 14px;
+        line-height: 1.5;
     }
 }
 
 .datetime-picker__input:hover,
 .datetime-picker__input:focus {
+    color: $white-color;
     background-color: $accent-color;
     outline: 1px solid $accent-color;
     border-radius: 20px;
@@ -326,7 +351,6 @@
 .datetime-picker__input:focus + .datetime-picker__input-icon-calender,
 .datetime-picker__input:hover + .datetime-picker__input-icon-calender {
     fill: $white-color;
-    stroke: $white-color;
 }
 
 .datetime-picker__input-icon-arrow-down {
@@ -340,8 +364,8 @@
     fill: #A2A2A2;
 }
 
-.datetime-picker__input:focus + .datetime-picker__input-icon-arrow-down,
-.datetime-picker__input:hover + .datetime-picker__input-icon-arrow-down {
+.datetime-picker__input:focus ~ .datetime-picker__input-icon-arrow-down,
+.datetime-picker__input:hover ~ .datetime-picker__input-icon-arrow-down {
     display: none;
 }
 
@@ -349,9 +373,9 @@
     display: none;
 }
 
-.datetime-picker__input:focus + .datetime-picker__input-icon-arrow-up,
-.datetime-picker__input:hover + .datetime-picker__input-icon-arrow-up {
-    // display: block;
+.datetime-picker__input:focus ~ .datetime-picker__input-icon-arrow-up,
+.datetime-picker__input:hover ~ .datetime-picker__input-icon-arrow-up {
+    display: block;
 
     position: absolute;
     top: 50%;
@@ -361,5 +385,60 @@
     height: 14px;
 
     fill: $white-color;
-    stroke: $white-color;
+}
+
+// FLATPICKR
+
+.flatpickr-calendar {
+    background-color: #F8F8F8;
+    color: #000000;
+    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.1);
+    border-radius: 20px
+}
+
+.flatpickr-monthDropdown-months {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.4;
+
+    color: #000000;
+}
+
+.flatpickr-weekdays {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.5;
+    color: rgba(60, 60, 67, 0.3);
+}
+
+.dayContainer {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.8;
+
+    color: #000000;
+}
+
+.flatpickr-day.selected {
+    background-color: $accent-color !important;
+    border-color: $accent-color !important;
+}
+
+.selected:hover,
+.selected:focus {
+    background-color: $accent-color !important;
+    border-color: $accent-color !important;
+}
+
+.flatpickr-prev-month {
+    fill: $accent-color !important;
+    stroke: $accent-color !important;
+}
+
+.flatpickr-next-month {
+    fill: $accent-color !important;
+    stroke: $accent-color !important;
 }

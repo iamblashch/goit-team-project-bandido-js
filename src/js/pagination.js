@@ -1,3 +1,5 @@
+
+
 const paginationList = document.querySelector(`.pagination`);
 const nextPage = document.querySelector(`.pagination-next`);
 const previous = document.querySelector(`.pagination-previous`);
@@ -9,18 +11,13 @@ const lastBtn = document.querySelector(`.last-btn`);
 const ellipsis = document.querySelector(`.pagination-ellipsis_item1`)
 const ellipsisSecond = document.querySelector(`.pagination-ellipsis_item2`)
 
-let numberPage;
-
-
-lastBtn.textContent = 10; // <------Добавити всі сторінки -----
-
 
 
 
 paginationList.addEventListener(`click`, switchPage);
 let currentTurgetPage = document.querySelector(`.is-current`);
-
 function switchPage(e) {
+  
   currentTurgetPage = document.querySelector(`.is-current`);
   nextPage.disabled = false;
   previous.disabled = false;
@@ -96,7 +93,8 @@ function switchPage(e) {
         fourBtn.textContent = Number(firstBtn.textContent) + 3;
         previous.disabled = true;
     }
-    }
+  }
+  // -------remove/Add dots -----
     if (Number(fourBtn.textContent) >= 5) {
         ellipsis.classList.remove(`hidden-elm`)
   } else { ellipsis.classList.add(`hidden-elm`) }
@@ -104,9 +102,16 @@ function switchPage(e) {
         ellipsisSecond.classList.add(`hidden-elm`)
         } else { ellipsisSecond.classList.remove(`hidden-elm`) }
 
-    
-    
-    numberPage = document.querySelector(`.is-current`).textContent
-    console.log(numberPage)  // <-----Номер Сторінки------
-
+  numberPage = document.querySelector(`.is-current`).textContent
+  if (currentTurgetPage.textContent !== e.target.textContent) {
+    window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+    duration: 2000
+ });
+  }
+  
 }
+let numberPage = 1;
+// <-----Номер Сторінки------
+export { numberPage, currentTurgetPage};
