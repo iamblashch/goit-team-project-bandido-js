@@ -12,7 +12,6 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  margin-right: 16px;
 }
 
 @media (min-width: 768px) {
@@ -118,15 +117,6 @@
   }
 }
 
-.theme-toggle__item {
-  &:not(:last-child) {
-    margin-right: 8px;
-  }
-}
-
-.theme-toggle__switcher {
-  margin-right: 8px;
-}
 .theme-toggle__switcher .theme-svg {
   fill: rgba(95, 103, 117, 1);
   stroke: rgba(95, 103, 117, 1);

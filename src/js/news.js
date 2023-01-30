@@ -1,5 +1,7 @@
 import { numberPage, currentTurgetPage } from './pagination';
 import axios from 'axios';
+import svg from '../img/symbol-defs.svg'
+
 
 let nameSearchAPI = `books`;
 let dateSearchAPI = ``
@@ -8,23 +10,24 @@ let dateSearchAPI = ``
 // const API_KEY = `95e98d9273f444ce9e18ab841a2d5917`
 // const API_KEY = `06f0deb6172640a49513727c765522c5`
 // const API_KEY = `ef883f39deda4d31b974aca841c64d64`
-const API_KEY = `52d268786081454ea8f67dd976d67718`;
+const API_KEY = `f51f6849c635478e87bd30b1e8556022`;
 const lastBtn = document.querySelector(`.last-btn`);
-const sectionCard = document.querySelector(`.card_list`);
+const sectionCard = document.querySelector(`.news-list`);
 const ListenerNumberPage = document.querySelector(`.pagination`);
 const filterButton = document.querySelector(`.filter__list`)
+
 
 
 const numberPageApi = (lastBtn.textContent = 12);
 
 function newsAPI() {
-      console.log(numberPage)
       return new Promise((resolve, reject) => {
       axios
         .get(
-          `https://newsapi.org/v2/everything?q=${nameSearchAPI}&from=${dateSearchAPI}&to=${dateSearchAPI}&sortBy=popularity&pageSize=6&page=${numberPage}&apiKey=${API_KEY}`
+          `https://newsapi.org/v2/everything?q=${nameSearchAPI}&from=${dateSearchAPI}&to=${dateSearchAPI}&sortBy=popularity&pageSize=8&page=${numberPage}&apiKey=${API_KEY}`
         )
         .then(response => {
+          
           resolve(response);
           reject(new Error('err'));
         });
@@ -47,9 +50,7 @@ function newsAPI() {
 
           let formattedDate = news.publishedAt.toString().slice(0,10);
           let replaceDat = formattedDate.replace(`-`, '/').replace(`-`, '/');
-          return `<div class="news">
-      <ul class="news-list">
-        <li class="news-item">
+          return `<li class="news-item">
           <div class="news-thumb">
             <img
               class="img-news"
@@ -62,7 +63,7 @@ function newsAPI() {
             <a href="#" class="link-add"
               >Add to favorite
               <svg class="add-icon" width="16" heigth="16">
-                <use href="./img/symbol-defs.svg#heart-filled"></use>
+                <use href="${svg}#heart-filled"></use>
               </svg>
             </a>
           </div>
@@ -78,9 +79,7 @@ function newsAPI() {
               <p class="hyperlink"><a href="${news.url}">Read more</a></p>
             </div>
           </div>
-        </li>
-      </ul>
-    </div>`;
+        </li>`;
       }
     });
     sectionCard.innerHTML = markupArray.join('');
