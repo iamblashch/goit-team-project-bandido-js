@@ -33,6 +33,8 @@
     }
 }
 
+
+
 .dropdown__others {
     display: none;
 
@@ -183,18 +185,29 @@
         display: block;
     }
 }
+.js-theme-change{
+    @media screen and (min-width: 768px){
+    color: #4440f6;
+    cursor: pointer;
+    background-color: #F4F4F4;
+    border: 1px solid #4440f6;
+    border-radius: 20px;
+    padding: 7.5px 24.5px;}
+}
+.js-theme-change:hover,
+.js-theme-change:focus {
+    color: white;
+    background: $accent-color;
+}
 
 .filter__link {
     @media screen and (min-width: 768px) {
-        padding-top: 7.5px;
-        padding-bottom: 7.5px;
-        padding-left: 24.5px;
-        padding-right: 24.5px;
+        padding: 0;
 
-        color: $accent-color;
-        background: transparent;
-        border: 1px solid $accent-color;
-        border-radius: 20px;
+        // color: $accent-color;
+        // background: transparent;
+        // border: 1px solid $accent-color;
+        // border-radius: 20px;
 
         cursor: pointer;
     }
@@ -206,21 +219,21 @@
     background: $accent-color;
 }
 
-.filter__link-desktop {
-    @media screen and (min-width: 768px) {
-        padding-top: 7.5px;
-        padding-bottom: 7.5px;
-        padding-left: 24.5px;
-        padding-right: 24.5px;
+// .filter__link-desktop {
+//     @media screen and (min-width: 768px) {
+//         padding-top: 7.5px;
+//         padding-bottom: 7.5px;
+//         padding-left: 24.5px;
+//         padding-right: 24.5px;
 
-        color: $accent-color;
-        background: transparent;
-        border: 1px solid $accent-color;
-        border-radius: 20px;
+//         color: $accent-color;
+//         background: transparent;
+//         border: 1px solid $accent-color;
+//         border-radius: 20px;
 
-        cursor: pointer;
-    }
-}
+//         cursor: pointer;
+//     }
+// }
 
 .filter__link-desktop:hover,
 .filter__link-desktop:focus {
