@@ -1,5 +1,3 @@
-
-
 const paginationList = document.querySelector(`.pagination`);
 const nextPage = document.querySelector(`.pagination-next`);
 const previous = document.querySelector(`.pagination-previous`);
