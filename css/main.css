@@ -95,7 +95,7 @@ img {
 }
 
 .container {
-  max-width: 480px;
+  max-width: 767px;
   margin: 0 auto;
   padding-left: 16px;
   padding-right: 16px;
@@ -290,6 +290,12 @@ img {
 }
 
 .theme-toggle__item {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: transparent;
 }
 
@@ -453,6 +459,7 @@ img {
   padding-left: 13px;
   padding-right: 37px;
   color: #4440F6;
+  background-color: transparent;
   background: transparent;
   border: 1px solid #4440F6;
   border-radius: 20px;
@@ -531,7 +538,7 @@ img {
   padding-top: 14px;
   padding-right: 14px;
   padding-left: 14px;
-  background-color: #F8F8F8;
+  background-color: transparent;
   -webkit-box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.1);
   z-index: 1;
@@ -583,12 +590,27 @@ img {
 }
 
 @media screen and (min-width: 768px) {
+  .js-theme-change {
+    color: #4440f6;
+    cursor: pointer;
+    background-color: #F4F4F4;
+    border: 1px solid #4440f6;
+    border-radius: 20px;
+    padding: 7.5px 24.5px;
+  }
+}
+
+.js-theme-change:hover,
+.js-theme-change:focus {
+  color: white;
+  background: #4440F6;
+}
+
+@media screen and (min-width: 768px) {
   .filter__link {
-    padding-top: 7.5px;
-    padding-bottom: 7.5px;
-    padding-left: 24.5px;
-    padding-right: 24.5px;
+    padding: 0;
     color: #4440F6;
+    background-color: transparent;
     background: transparent;
     border: 1px solid #4440F6;
     border-radius: 20px;
@@ -599,16 +621,13 @@ img {
 .filter__link:hover,
 .filter__link:focus {
   color: #ffffff;
-  background: #4440F6;
+  background-color: #4440F6;
 }
 
 @media screen and (min-width: 768px) {
   .filter__link-desktop {
-    padding-top: 7.5px;
-    padding-bottom: 7.5px;
-    padding-left: 24.5px;
-    padding-right: 24.5px;
     color: #4440F6;
+    background-color: transparent;
     background: transparent;
     border: 1px solid #4440F6;
     border-radius: 20px;
@@ -619,7 +638,7 @@ img {
 .filter__link-desktop:hover,
 .filter__link-desktop:focus {
   color: #ffffff;
-  background: #4440F6;
+  background-color: #4440F6;
 }
 
 .wrapper {
@@ -1220,9 +1239,6 @@ img {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-  }
-  .news-item:nth-child(3n) {
-    margin-right: 0;
   }
   .news-item:nth-last-child(-n+3) {
     margin-bottom: 0;
