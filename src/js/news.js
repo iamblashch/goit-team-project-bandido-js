@@ -24,7 +24,7 @@ function newsAPI() {
       return new Promise((resolve, reject) => {
       axios
         .get(
-          `http://newsapi.org/v2/everything?q=${nameSearchAPI}&from=${dateSearchAPI}&to=${dateSearchAPI}&sortBy=popularity&pageSize=8&page=${numberPage}&apiKey=${API_KEY}`
+          `https://newsapi.org/v2/everything?q=${nameSearchAPI}&from=${dateSearchAPI}&to=${dateSearchAPI}&sortBy=popularity&pageSize=8&page=${numberPage}&apiKey=${API_KEY}`
         )
         .then(response => {
           
