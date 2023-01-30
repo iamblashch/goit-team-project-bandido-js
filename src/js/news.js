@@ -25,6 +25,17 @@ let page = 0;
 
 const numberPageApi = (lastBtn.textContent = 12);
 
+// function newsAPI() {
+//   return new Promise((resolve, reject) => {
+//     axios.get(`https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=${API_KEY}`)
+//       .then(response => {
+//         resolve(response.data.results);
+//       })
+//       .catch(error => {
+//         reject(error);
+//       });
+//   });
+// }
 function newsAPI() {
   return new Promise((resolve, reject) => {
     axios
@@ -118,15 +129,93 @@ ListenerNumberPage.addEventListener(`click`, e => {
       CreatCardNews(news);
     });
   } else if (currentElemNumber.textContent === `3`) {
-    const ellipsisSecondx2 = document
-      .querySelector(`.pagination-ellipsis_item2`)
-      .classList.add(`hidden-elm`);
-    nextPagex2.disabled = true;
-    newsCounter = 16;
-    newsAPI().then(news => {
-      CreatCardNews(news);
-    });
+    const ellipsisSecondx2 = document.querySelector(`.pagination-ellipsis_item2`).classList.add(`hidden-elm`);
+    nextPagex2.disabled = true
+  newsCounter = 16;
+     newsAPI()
+    .then(news => {
+    CreatCardNews(news);
+  })
   }
+});
+
+function CreatCardNews(news) {
+  const markupArray = news.map(news => {
+    let words = news.content.split(' ');
+    if (words.length > 30) {
+      let shordDesc = words.slice(0, 30).join(' ') + '...';
+
+      let formattedDate = news.publishedAt.toString().slice(0, 10);
+      let replaceDat = formattedDate.replace(`-`, '/').replace(`-`, '/');
+      return `<li class="news-item">
+          <div class="news-thumb">
+            <img
+              class="img-news"
+              src="${news.urlToImage}"
+              alt="${news.description}"
+              width="395"
+              height="395"
+            />
+            <p class="filter-descr">${nameSearchAPI}</p>
+            <a href="#" class="link-add"
+              >Add to favorite
+              <svg class="add-icon" width="16" heigth="16">
+                <use href="${svg}#heart-filled"></use>
+              </svg>
+            </a>
+          </div>
+          <div class="desr">
+            <h2 class="title">
+              ${news.title}
+            </h2>
+            <p class="subtitle">
+              ${shordDesc}
+            </p>
+            <div class="other-line">
+              <p class="date">${replaceDat}</p>
+              <p class="hyperlink"><a href="${news.url}">Read more</a></p>
+            </div>
+          </div>
+        </li>`;
+    }
+  });
+  sectionCard.insertAdjacentHTML('beforeend', markupArray.join(''));
+  sectionCard.insertAdjacentHTML('afterbegin', weather());
+
+}
+
+currentTurgetPage;
+ListenerNumberPage.addEventListener(`click`, e => {
+  console.log(numberPage);
+  if (currentTurgetPage.textContent === e.target.textContent) {
+    return;
+  }
+  // if (e.target.nodeName !== `A` || e.target.nodeName !== `BUTTON`) {
+  //     return
+  // }
+
+  newsAPI()
+    .then(news => {
+      CreatCardNews(news.data.articles);
+      console.log(news);
+    })
+    .catch(err => console.log(err));
+});
+
+filterButton.addEventListener(`click`, e => {
+  if (e.target.nodeName !== `A`) {
+    return;
+  }
+  nameSearchAPI = e.target.textContent.trim();
+  console.log(nameSearchAPI);
+
+  clearCard();
+  newsAPI()
+    .then(news => {
+      CreatCardNews(news.data.articles);
+      console.log(news);
+    })
+    .catch(err => console.log(err));
 });
 
 filterButton.addEventListener(`click`, e => {
@@ -148,6 +237,7 @@ filterButton.addEventListener(`click`, e => {
 function clearCard() {
   sectionCard.innerHTML = ``;
 }
+
 
 function weather() {
   return `<div class="weather">
