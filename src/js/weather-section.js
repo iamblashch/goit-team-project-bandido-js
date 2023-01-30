@@ -14,21 +14,21 @@
 // const date = new Date();
 // currentData.textContent = date.toDateString();
 
-// // ipBase.info().then(response => {
-// //     const cityName = response.data.location.city.name;
-// //     console.log(response);
-// //         fetch(`https://api.openweathermap.org/data/2.5/weather?q=Jakarta&appid=${OPENWEATHERMAP_API_KEY}`).then(response => {
-// //             if (!response.ok) {
-// //             throw new Error(response.status);
-// //             }
-// //             return response.json()
-// //             }).then(data => {
-// //                 console.log(data);
-// //                 degrees.innerHTML = Math.round(data.main.temp - 273) + '&deg;';
-// //                 sky.textContent = data.weather[0].main
-// //                 currentCity.textContent = data.name
-// //                 weathehImage.innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png" alt="">`
-// //                 weatherForWeek.setAttribute('href', `https://openweathermap.org/city/${data.id}`)
-// //             });
-// // });
+// ipBase.info().then(response => {
+//     const cityName = response.data.location.city.name;
+//     console.log(response);
+//         fetch(`https://api.openweathermap.org/data/2.5/weather?q=Jakarta&appid=${OPENWEATHERMAP_API_KEY}`).then(response => {
+//             if (!response.ok) {
+//             throw new Error(response.status);
+//             }
+//             return response.json()
+//             }).then(data => {
+//                 console.log(data);
+//                 degrees.innerHTML = Math.round(data.main.temp - 273) + '&deg;';
+//                 sky.textContent = data.weather[0].main
+//                 currentCity.textContent = data.name
+//                 weathehImage.innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png" alt="">`
+//                 weatherForWeek.setAttribute('href', `https://openweathermap.org/city/${data.id}`)
+//             });
+// });
 
