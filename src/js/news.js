@@ -13,6 +13,9 @@ const API_KEY = `06f0deb6172640a49513727c765522c5`;
 const lastBtn = document.querySelector(`.last-btn`);
 const sectionCard = document.querySelector(`.news-list`);
 const ListenerNumberPage = document.querySelector(`.pagination`);
+const filterButton = document.querySelector(`.filter-section`)
+
+
 const filterButton = document.querySelector(`.filter__list`);
 
 const numberPageApi = (lastBtn.textContent = 12);
