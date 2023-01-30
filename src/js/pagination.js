@@ -19,8 +19,8 @@ let currentTurgetPage = document.querySelector(`.is-current`);
 function switchPage(e) {
   
   currentTurgetPage = document.querySelector(`.is-current`);
-  nextPage.disabled = false;
-  previous.disabled = false;
+  // nextPage.disabled = false;
+  // previous.disabled = false;
   if (e.target.nodeName !== `A` && e.target.nodeName !== `BUTTON`) {
     return;
   }
