@@ -16,7 +16,7 @@ const ListenerNumberPage = document.querySelector(`.pagination`);
 const filterButton = document.querySelector(`.filter-section`)
 
 
-const filterButton = document.querySelector(`.filter__list`);
+// const filterButton = document.querySelector(`.filter__list`);
 
 const numberPageApi = (lastBtn.textContent = 12);
 
