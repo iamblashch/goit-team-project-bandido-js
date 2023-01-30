@@ -187,27 +187,36 @@
 }
 .js-theme-change{
     @media screen and (min-width: 768px){
-    color: #4440f6;
-    cursor: pointer;
-    background-color: #F4F4F4;
+        border-radius: 20px;
+        padding: 0;
+    // color: #4440f6;
+    // cursor: pointer;
+    // background-color: #F4F4F4;
     border: 1px solid #4440f6;
-    border-radius: 20px;
-    padding: 7.5px 24.5px;}
-}
+    // border-radius: 20px;
+   height:32px;
+   widht: 93px;
+}}
+
+
 .js-theme-change:hover,
 .js-theme-change:focus {
     color: white;
-    background: $accent-color;
+    background-color: $accent-color;
 }
 
 .filter__link {
     @media screen and (min-width: 768px) {
         padding: 0;
-
-        // color: $accent-color;
-        // background: transparent;
+        cursor: pointer;
+        // background-color: #F4F4F4;
+        // border: 1px solid #4440f6;
+        border-radius: 20px;
+        padding: 7.5px 24.5px;
+        color: $accent-color;
+        background: transparent;
         // border: 1px solid $accent-color;
-        // border-radius: 20px;
+        border-radius: 20px;
 
         cursor: pointer;
     }
@@ -216,7 +225,7 @@
 .filter__link:hover,
 .filter__link:focus {
     color: $white-color;
-    background: $accent-color;
+    // background: $accent-color;
 }
 
 // .filter__link-desktop {
