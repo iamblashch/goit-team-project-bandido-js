@@ -37,7 +37,10 @@ const options = {
         // ourDate = ourDate.toISOString().split('T')[0];
 
         const fetch = makeFetchByDate(ourDateArr, 'ukraine')
-            .then(data => console.log(data))
+            .then(data => {
+                // ТУТ НУЖНО ВСТАВИТЬ ФУНКЦИЮ КОТОРАЯ БУДЕТ ОТРИСОВИВАТЬ РАЗМЕТКУ ПРИ ПОЗИТИВНОЙ ОТРАБОТКЕ ЗАПРОСА
+                console.log(data)
+            })
             .catch(error => console.log(error))
         return fetch
     }
