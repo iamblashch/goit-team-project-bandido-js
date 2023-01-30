@@ -1,5 +1,7 @@
 import { numberPage, currentTurgetPage } from './pagination';
 import axios from 'axios';
+import svg from '../img/symbol-defs.svg'
+
 
 let nameSearchAPI = `books`;
 let dateSearchAPI = ``
@@ -13,6 +15,7 @@ const lastBtn = document.querySelector(`.last-btn`);
 const sectionCard = document.querySelector(`.news-list`);
 const ListenerNumberPage = document.querySelector(`.pagination`);
 const filterButton = document.querySelector(`.filter__list`)
+
 
 
 const numberPageApi = (lastBtn.textContent = 12);
@@ -59,7 +62,7 @@ function newsAPI() {
             <a href="#" class="link-add"
               >Add to favorite
               <svg class="add-icon" width="16" heigth="16">
-                <use href="./img/symbol-defs.svg#heart-filled"></use>
+                <use href="${svg}#heart-filled"></use>
               </svg>
             </a>
           </div>
