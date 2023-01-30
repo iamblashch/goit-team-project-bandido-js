@@ -131,6 +131,9 @@
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown__content {
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+
     display: none;
     position: absolute;
     min-width: 148px;
@@ -141,6 +144,7 @@
 
     background-color: #F8F8F8;
     box-shadow: (0px 10px 60px rgba(0, 0, 0, 0.1));
+    border-radius: 20px;
     z-index: 1;
 
     @media screen and (min-width: 320px) {
