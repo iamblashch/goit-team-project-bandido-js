@@ -99,9 +99,9 @@ function CreatCardNews(news) {
   </li>`;
   });
   sectionCard.innerHTML = markupArray.join('');
-  setTimeout(() => {
-    sectionCard.insertAdjacentHTML('afterbegin', weather());
-  }, 10);
+  sectionCard.insertAdjacentHTML('afterbegin', weather());
+  // setTimeout(() => {
+  // }, 10);
 }
 setTimeout(() => {
   creatElmNumber()
@@ -235,7 +235,7 @@ function weather() {
         <p class="sky">Sunny</p>
         <p class="current-city">
           <svg class="current-city__icon-location">
-            <use href="./img/symbol-defs.svg#location"></use></svg
+            <use href="${svg}#location"></use></svg
           >Jakarta
         </p>
       </div>
@@ -357,5 +357,6 @@ function CreatCardNewsCategory(news) {
   }
 
 }
+
 
 
