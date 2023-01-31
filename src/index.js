@@ -1,3 +1,4 @@
+import './js/header';
 import './js/them-toggle'
 import './js/input-serch-fetch-news';
 import './js/calendar';

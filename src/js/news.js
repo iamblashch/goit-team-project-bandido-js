@@ -6,6 +6,11 @@ let dateSearchAPI = ``;
 
 const API_KEY = `4EuZ2Hj9i1pqPAZzcwt4BhqZhGGltjTa`;
 
+// const API_KEY = 'f51f6849c635478e87bd30b1e8556022';
+// const API_KEY = `95e98d9273f444ce9e18ab841a2d5917`
+// const API_KEY = `06f0deb6172640a49513727c765522c5`
+// const API_KEY = `ef883f39deda4d31b974aca841c64d64`
+const API_KEY = `95e98d9273f444ce9e18ab841a2d5917`;
 const lastBtn = document.querySelector(`.last-btn`);
 const sectionCard = document.querySelector(`.news-list`);
 const ListenerNumberPage = document.querySelector(`.pagination`);
