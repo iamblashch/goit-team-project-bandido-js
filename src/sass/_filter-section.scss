@@ -192,7 +192,7 @@
     cursor: pointer;
     background-color: #F4F4F4;
     border: 1px solid #4440f6;
-    border-radius: 20px;
+    border-radius: 31px;
     padding: 7.5px 24.5px;}
 }
 .js-theme-change:hover,
@@ -225,20 +225,20 @@
     background-color: $accent-color;
 }
 
-// .filter__link-desktop {
-//     @media screen and (min-width: 768px) {
-//         padding-top: 7.5px;
-//         padding-bottom: 7.5px;
-//         padding-left: 24.5px;
-//         padding-right: 24.5px;
+.filter__link-desktop {
+    // @media screen and (min-width: 768px) {
+    //     padding-top: 7.5px;
+    //     padding-bottom: 7.5px;
+    //     padding-left: 24.5px;
+    //     padding-right: 24.5px;
 
-//         color: $accent-color;
-//         background: transparent;
-//         border: 1px solid $accent-color;
-//         border-radius: 20px;
-//         cursor: pointer;
-//     }
-// }
+    //     color: $accent-color;
+    //     background: transparent;
+    //     border: 1px solid $accent-color;
+    //     border-radius: 20px;
+    //     cursor: pointer;
+    // }
+}
 .filter__link-desktop {
     @media screen and (min-width: 768px) {
         padding-top: 7.5px;

@@ -89,8 +89,12 @@ img {
   --accent-color: rgba(75, 72, 219, 1);
 }
 
+.is-hidden {
+  display: none;
+}
+
 .container {
-  max-width: 480px;
+  max-width: 767px;
   margin: 0 auto;
   padding-left: 16px;
   padding-right: 16px;
@@ -115,6 +119,7 @@ img {
   align-items: center;
   padding-top: 24px;
   padding-bottom: 24px;
+  justify-content: space-around;
 }
 
 .logo {
@@ -157,7 +162,7 @@ img {
 }
 @media screen and (min-width: 1200px) {
   .nav__list {
-    margin-right: 147px;
+    margin-right: 140px;
   }
 }
 
@@ -177,7 +182,7 @@ img {
   display: block;
   font-family: Manrope;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 25px;
   color: inherit;
   cursor: pointer;
@@ -227,7 +232,7 @@ img {
 @media screen and (min-width: 1200px) {
   .input-search {
     width: 288px;
-    margin-right: 147px;
+    margin-right: 140px;
   }
 }
 
@@ -272,6 +277,12 @@ img {
   .theme-toggle__list {
     gap: 12px;
   }
+}
+
+.theme-toggle__item {
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
 }
 
 .sun-icon {
@@ -340,22 +351,80 @@ img {
   color: rgb(68, 64, 247);
 }
 
-.theme-toggle {
-  border: none;
-  background-color: transparent;
+.burger-menu {
+  fill: #111321;
+}
+
+.toggle input[type=checkbox] {
+  display: none;
+}
+
+.toggle label {
+  background-color: #ffffff;
+  border: 0.604701px solid #4b48db;
+  border-radius: 20px;
   cursor: pointer;
-  height: 20px;
+  display: inline-block;
+  position: relative;
+  transition: all ease-in-out 0.3s;
   width: 40px;
+  height: 20px;
 }
-
-.toggle-light {
-  height: 20px;
-  width: 40px;
+.toggle label .toggle label::after {
+  background-color: #4b48db;
+  border-radius: 20px;
+  content: "";
+  cursor: pointer;
+  display: inline-block;
+  position: absolute;
+  left: 1.5px;
+  top: 1.5px;
+  transition: all ease-in-out 0.3s;
+  width: 16px;
+  height: 16px;
 }
-
-.toggle-dark {
-  height: 20px;
+.toggle label .toggle input[type=checkbox]:checked ~ label {
+  background-color: #4440f7;
+  border: 1px solid #ffffff;
+}
+.toggle label .toggle input[type=checkbox]:checked ~ label::after {
+  background-color: #ffffff;
+  transform: translateX(19px);
+}
+.toggle label .toggle1 input[type=checkbox] {
+  display: none;
+}
+.toggle label .toggle1 label {
+  background-color: #ffffff;
+  border: 0.604701px solid #4b48db;
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: all ease-in-out 0.3s;
   width: 40px;
+  height: 20px;
+}
+.toggle label .toggle1 label::after {
+  background-color: #4b48db;
+  border-radius: 20px;
+  content: "";
+  cursor: pointer;
+  display: inline-block;
+  position: absolute;
+  left: 1.5px;
+  top: 1.5px;
+  transition: all ease-in-out 0.3s;
+  width: 16px;
+  height: 16px;
+}
+.toggle label .toggle1 input[type=checkbox]:checked ~ label {
+  background-color: #4440f7;
+  border: 1px solid #ffffff;
+}
+.toggle label .toggle1 input[type=checkbox]:checked ~ label::after {
+  background-color: #ffffff;
+  transform: translateX(19px);
 }
 
 .filter-section {
@@ -423,6 +492,7 @@ img {
   padding-right: 37px;
   color: #4440F6;
   background-color: transparent;
+  background: transparent;
   border: 1px solid #4440F6;
   border-radius: 20px;
   cursor: pointer;
@@ -547,13 +617,28 @@ img {
 }
 
 @media screen and (min-width: 768px) {
+  .js-theme-change {
+    color: #4440f6;
+    cursor: pointer;
+    background-color: #F4F4F4;
+    border: 1px solid #4440f6;
+    border-radius: 31px;
+    padding: 7.5px 24.5px;
+  }
+}
+
+.js-theme-change:hover,
+.js-theme-change:focus {
+  color: white;
+  background: #4440F6;
+}
+
+@media screen and (min-width: 768px) {
   .filter__link {
-    padding-top: 7.5px;
-    padding-bottom: 7.5px;
-    padding-left: 24.5px;
-    padding-right: 24.5px;
+    padding: 0;
     color: #4440F6;
     background-color: transparent;
+    background: transparent;
     border: 1px solid #4440F6;
     border-radius: 20px;
     cursor: pointer;
@@ -574,6 +659,7 @@ img {
     padding-right: 24.5px;
     color: #4440F6;
     background-color: transparent;
+    background: transparent;
     border: 1px solid #4440F6;
     border-radius: 20px;
     cursor: pointer;
@@ -921,7 +1007,6 @@ img {
   border: none;
   cursor: pointer;
   padding: 0;
-  margin-right: 16px;
 }
 
 @media (min-width: 768px) {
@@ -1022,14 +1107,6 @@ img {
   .mobile-theme-toggle__list {
     display: none;
   }
-}
-
-.theme-toggle__item:not(:last-child) {
-  margin-right: 8px;
-}
-
-.theme-toggle__switcher {
-  margin-right: 8px;
 }
 
 .theme-toggle__switcher .theme-svg {
@@ -1144,9 +1221,6 @@ img {
     margin-bottom: 40px;
     padding-bottom: 0px;
     justify-content: space-between;
-  }
-  .news-item:nth-child(3n) {
-    margin-right: 0;
   }
   .news-item:nth-last-child(-n+3) {
     margin-bottom: 0;
@@ -1411,4 +1485,76 @@ body {
 .pagination-ellipsis_last,
 .pagination-ellipsis_first {
   padding: 5;
+}
+
+.toggle input[type=checkbox] {
+  display: none;
+}
+
+.toggle label {
+  background-color: #ffffff;
+  border: 0.604701px solid #4b48db;
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: all ease-in-out 0.3s;
+  width: 40px;
+  height: 20px;
+}
+.toggle label .toggle label::after {
+  background-color: #4b48db;
+  border-radius: 20px;
+  content: "";
+  cursor: pointer;
+  display: inline-block;
+  position: absolute;
+  left: 1.5px;
+  top: 1.5px;
+  transition: all ease-in-out 0.3s;
+  width: 16px;
+  height: 16px;
+}
+.toggle label .toggle input[type=checkbox]:checked ~ label {
+  background-color: #4440f7;
+  border: 1px solid #ffffff;
+}
+.toggle label .toggle input[type=checkbox]:checked ~ label::after {
+  background-color: #ffffff;
+  transform: translateX(19px);
+}
+.toggle label .toggle1 input[type=checkbox] {
+  display: none;
+}
+.toggle label .toggle1 label {
+  background-color: #ffffff;
+  border: 0.604701px solid #4b48db;
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: all ease-in-out 0.3s;
+  width: 40px;
+  height: 20px;
+}
+.toggle label .toggle1 label::after {
+  background-color: #4b48db;
+  border-radius: 20px;
+  content: "";
+  cursor: pointer;
+  display: inline-block;
+  position: absolute;
+  left: 1.5px;
+  top: 1.5px;
+  transition: all ease-in-out 0.3s;
+  width: 16px;
+  height: 16px;
+}
+.toggle label .toggle1 input[type=checkbox]:checked ~ label {
+  background-color: #4440f7;
+  border: 1px solid #ffffff;
+}
+.toggle label .toggle1 input[type=checkbox]:checked ~ label::after {
+  background-color: #ffffff;
+  transform: translateX(19px);
 }/*# sourceMappingURL=main.css.map */
