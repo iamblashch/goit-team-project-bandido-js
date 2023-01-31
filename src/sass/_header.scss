@@ -53,7 +53,7 @@ font-family: Manrope;
 font-weight: 700;
 font-size: 24px;
 line-height: 33px;
-margin-right: 167px;
+// margin-right: 167px;
 
 @media screen and (min-width: 767px){
     max-width: 768px;
@@ -135,6 +135,9 @@ margin-right: 167px;
     @media screen and (min-width: 1280px) {
         margin-right: 147px;
     }
+}
+.nav-svg{
+    stroke: #111321;
 }
 
 .search-form{
@@ -255,12 +258,10 @@ margin-right: 167px;
 
 
 
-// .nav__svg{
-//     stroke: black;
-//     @media screen and (min-width: 767px) {
-//         display: none;
-//             }
-// }
+.nav__svg{
+    stroke: black;
+
+}
 
 // .nav__search{
 //     margin-right: 14px;
