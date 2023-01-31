@@ -1,3 +1,5 @@
+// const pagList = document.querySelector(`.pagination-list`)
+
 const paginationList = document.querySelector(`.pagination`);
 const nextPage = document.querySelector(`.pagination-next`);
 const previous = document.querySelector(`.pagination-previous`);
@@ -9,107 +11,72 @@ const lastBtn = document.querySelector(`.last-btn`);
 const ellipsis = document.querySelector(`.pagination-ellipsis_item1`)
 const ellipsisSecond = document.querySelector(`.pagination-ellipsis_item2`)
 
+// let btn1;
+// let numberAllPage = 20;
+// let numberPagePagination = 1;
+// let murkupPagination
+// function creatElmNumber() {
+//   for (let index = 0; index < numberAllPage; index++) {
+//     if (numberAllPage <= 4) {
+//       murkupPagination = `<li><a class="pagination-link btn${numberPagePagination}" data${numberPagePagination}>${numberPagePagination}</a></li>`
+//       numberPagePagination += 1
+//       pagList.innerHTML += murkupPagination;
+//     } 
+//   }
+//   if (numberAllPage > 4) {
+//     murkupPagination = `
+//     <li><a class="pagination-link btn1" data1>1</a></li>
+//      <li><a class="pagination-link btn2" data2>2</a></li>
+//      <li><a class="pagination-link btn3" data3>3</a></li>
+//      <li><a class="pagination-link btn4" data4>4</a></li>
+//      <li><a class="pagination-link btn5" data5>5</a></li>
+//      <div class="pagination-ellipsis_item2"><span class="pagination-ellipsis_last">&hellip;</span></div>
+//      <div>
+//      <li><a class="pagination-link btn" data5>${numberAllPage}</a></li>`
+//     pagList.innerHTML = murkupPagination;
+//   } 
+//   btn1 = document.querySelector(`.btn1`)
+//   btn1.classList.add(`is-current`)
+// }
+// creatElmNumber()
 
 
+// let currentElem;
+// let numberAtribute = 1;
+// nextPage.addEventListener(`click`, () => {
+//   previous.disabled = false
 
-paginationList.addEventListener(`click`, switchPage);
-let currentTurgetPage = document.querySelector(`.is-current`);
-function switchPage(e) {
+//   numberAtribute += 1;
+//   currentElem = document.querySelector(`.is-current`)
+//   let currentAtribute = document.querySelector(`[data${numberAtribute}]`)
+//   currentElem.classList.remove(`is-current`)
+//   currentAtribute.classList.add(`is-current`)
+
+//   currentElem = document.querySelector(`.is-current`)
+
   
-  currentTurgetPage = document.querySelector(`.is-current`);
-  // nextPage.disabled = false;
-  // previous.disabled = false;
-  if (e.target.nodeName !== `A` && e.target.nodeName !== `BUTTON`) {
-    return;
-  }
+// })
+// previous.addEventListener(`click`, () => {
+//   numberAtribute -= 1;
 
-  // BTN previous---------
-  if (e.target.dataset.prev) {
-    if (lastBtn.classList.contains(`is-current`)) {
-      lastBtn.classList.remove(`is-current`);
-      fourBtn.classList.add(`is-current`);
-    } else if (fourBtn.classList.contains(`is-current`)) {
-      fourBtn.classList.remove(`is-current`);
-      thirdBtn.classList.add(`is-current`);
-    } else if (thirdBtn.classList.contains(`is-current`)) {
-      thirdBtn.classList.remove(`is-current`);
-      secondBtn.classList.add(`is-current`);
-    } else if (
-      secondBtn.textContent !== `2` &&
-      thirdBtn.textContent !== `3` &&
-      fourBtn.textContent !== `4`
-    ) {
-      secondBtn.textContent--;
-      thirdBtn.textContent--;
-      fourBtn.textContent--;
-    } else if (secondBtn.classList.contains(`is-current`)) {
-      secondBtn.classList.remove(`is-current`);
-      firstBtn.classList.add(`is-current`);
-      previous.disabled = true;
-    } else {
-      return;
-    }
-  }
+//   currentElem = document.querySelector(`.is-current`)
+//   let currentAtribute = document.querySelector(`[data${numberAtribute}]`)
+//   currentElem.classList.remove(`is-current`)
+//   currentAtribute.classList.add(`is-current`)
 
-      
-  // BTN NEXT ---------
-    if (e.target.dataset.next) {
-    if (firstBtn.classList.contains(`is-current`)) {
-      firstBtn.classList.remove(`is-current`);
-      secondBtn.classList.add(`is-current`);
-    } else if (secondBtn.classList.contains(`is-current`)) {
-      secondBtn.classList.remove(`is-current`);
-      thirdBtn.classList.add(`is-current`);
-    } else if (thirdBtn.classList.contains(`is-current`)) {
-      thirdBtn.classList.remove(`is-current`);
-      fourBtn.classList.add(`is-current`);
-    } else if (fourBtn.textContent !== String(lastBtn.textContent - 1)) {
-      secondBtn.textContent++;
-      thirdBtn.textContent++;
-      fourBtn.textContent++;
-    } else if (fourBtn.textContent === String(lastBtn.textContent - 1)) {
-      fourBtn.classList.remove(`is-current`);
-        lastBtn.classList.add(`is-current`);
-        nextPage.disabled = true;
-      }
-  }
+//   currentElem = document.querySelector(`.is-current`)
+//   if (currentElem.textContent === `1`) {
+//     previous.disabled = true
+//   }
 
-  // BTN NUMBER PAGE --------
+// })
 
-    if (e.target.nodeName === `A`) {
-    currentTurgetPage.classList.remove(`is-current`);
-    let targetCurrent = e.target;
-    targetCurrent.classList.add(`is-current`);
-    if (e.target.dataset.last) {
-      fourBtn.textContent = lastBtn.textContent - 1;
-      thirdBtn.textContent = lastBtn.textContent - 2;
-        secondBtn.textContent = lastBtn.textContent - 3;
-        nextPage.disabled = true;
-    }else if (e.target.dataset.first) {
-        secondBtn.textContent = Number(firstBtn.textContent) + 1;
-        thirdBtn.textContent = Number(firstBtn.textContent) + 2;
-        fourBtn.textContent = Number(firstBtn.textContent) + 3;
-        previous.disabled = true;
-    }
-  }
-  // -------remove/Add dots -----
-    if (Number(fourBtn.textContent) >= 5) {
-        ellipsis.classList.remove(`hidden-elm`)
-  } else { ellipsis.classList.add(`hidden-elm`) }
-  if (Number(fourBtn.textContent) === (Number(lastBtn.textContent) - 1)) {
-        ellipsisSecond.classList.add(`hidden-elm`)
-        } else { ellipsisSecond.classList.remove(`hidden-elm`) }
 
-  numberPage = document.querySelector(`.is-current`).textContent
-  if (currentTurgetPage.textContent !== e.target.textContent) {
-    window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-    duration: 2000
- });
-  }
-  
-}
-let numberPage = 1;
-// <-----Номер Сторінки------
-export { numberPage, currentTurgetPage};
+
+
+
+
+
+
+
+
