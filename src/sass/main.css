@@ -387,6 +387,7 @@ img {
 
 .toggle input[type=checkbox] {
   display: none;
+}
 .toggle-light {
   height: 20px;
   width: 52px;
@@ -1601,7 +1602,7 @@ body {
 .toggle label .toggle1 input[type=checkbox]:checked ~ label::after {
   background-color: #ffffff;
   transform: translateX(19px);
-
+}
 .section-news__title {
   margin-left: auto;
   margin-right: auto;
