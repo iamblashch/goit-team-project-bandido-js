@@ -1,15 +1,15 @@
 // const pagList = document.querySelector(`.pagination-list`)
 
-const paginationList = document.querySelector(`.pagination`);
-const nextPage = document.querySelector(`.pagination-next`);
-const previous = document.querySelector(`.pagination-previous`);
-const firstBtn = document.querySelector(`.first-btn`);
-const secondBtn = document.querySelector(`.second-btn`);
-const thirdBtn = document.querySelector(`.third-btn`);
-const fourBtn = document.querySelector(`.four-btn`);
-const lastBtn = document.querySelector(`.last-btn`);
-const ellipsis = document.querySelector(`.pagination-ellipsis_item1`)
-const ellipsisSecond = document.querySelector(`.pagination-ellipsis_item2`)
+// const paginationList = document.querySelector(`.pagination`);
+// const nextPage = document.querySelector(`.pagination-next`);
+// const previous = document.querySelector(`.pagination-previous`);
+// const firstBtn = document.querySelector(`.first-btn`);
+// const secondBtn = document.querySelector(`.second-btn`);
+// const thirdBtn = document.querySelector(`.third-btn`);
+// const fourBtn = document.querySelector(`.four-btn`);
+// const lastBtn = document.querySelector(`.last-btn`);
+// const ellipsis = document.querySelector(`.pagination-ellipsis_item1`)
+// const ellipsisSecond = document.querySelector(`.pagination-ellipsis_item2`)
 
 // let btn1;
 // let numberAllPage = 20;
