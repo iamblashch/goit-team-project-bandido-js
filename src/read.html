@@ -37,7 +37,25 @@
               <a href="./read.html" class="nav__link nav__link--current">Read</a>
             </li>
           </ul>
-          <div class="nav__search-bar">
+
+          <div class="search-container">
+        <form class="search-form" id="search-form">
+          <input
+            type="text"
+            name="searchQuery"
+            autocomplete="off"
+            placeholder="Search |"
+            class="search-input"
+          />
+          <button type="submit" class="search-button">
+            <svg class="icon-search">
+              <use href="/src/img/symbol-defs.svg#search"></use>
+            </svg>
+          </button>
+        </form>
+      </div>
+
+          <!-- <div class="nav__search-bar">
             <input
               type="text"
               name="search"
@@ -82,7 +100,7 @@
                 class="burger-menu"
               ></use>
             </svg>
-          </button>
+          </button> -->
     
           <ul class="theme-toggle__list">
             <li class="theme-toggle__item">

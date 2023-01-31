@@ -60,7 +60,22 @@ img {
 }
 
 .container {
-    padding-left: 20px;
-    padding-right: 20px;
-    margin: 0 auto;
-}
+    
+    min-width: 320px;
+    
+    padding-left: 16px;
+    padding-right: 16px;
+    
+    margin-left: auto;
+    margin-right: auto;}
+    /* @media screen and (min-width: 768px) {
+        max-width: 1280px;
+        
+    }
+    @media screen and (min-width:1281px) {
+        max-width: 1400px;
+    } */
+
+    
+
+
