@@ -5,7 +5,7 @@ const searchBtnEl = document.querySelector('.search-button')
 const sectionNewsEl = document.querySelector('.section-news');
 const sectionPaginationEl = document.querySelector('.pagination');
 
-const API_KEY = 'B0nM5YVwVGPOQpaqXoXzd3AxL5Kpg75H';
+// const API_KEY = 'B0nM5YVwVGPOQpaqXoXzd3AxL5Kpg75H';
 let keyword = '';
 
 function createMarkup() {
