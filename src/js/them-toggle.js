@@ -14,6 +14,19 @@ const darktToggleSvg = document.querySelector('.theme-toggle-svg-dark');
 const searchIcon = document.querySelector('.nav__search-icon');
 const burgerMenu = document.querySelector('.burger-menu');
 
+// MOBILE MENU
+const mobileMoonBtn = document.querySelector('.mobile-theme-dark');
+const mobileSunBtn = document.querySelector('.mobile-theme-light');
+const mobileMenu = document.querySelector('.menu-container');
+const lightTogglePoint = document.querySelector('.mobile-theme-toggle-svg-light');
+const darktTogglePoint = document.querySelector('.mobile-theme-toggle-svg-dark');
+const mobileSunSvg = document.querySelector('.mobile-sun-icon');
+const mobileMoonSvg = document.querySelector('.mobile-moon-icon');
+const mobileMenuListItem = document.querySelectorAll('.mobile-menu__link');
+const mobileMenuLogo = document.querySelector('.mobile-logo');
+const mobileMenuCloseSvg = document.querySelector('.menu-toggle__icon');
+
+
 // FILTER SECTION
 const filterLink = document.querySelector('.filter__link')
 const filterDesctop =document.querySelector('.filter__link-desktop')
@@ -46,6 +59,9 @@ moonIcon.addEventListener('click', switchThemeToDark);
 toggleTextLeft.addEventListener("click", switchThemeToLight)
 toggleTextRight.addEventListener('click', switchThemeToDark);
 
+mobileMoonBtn.addEventListener('click', switchThemeToDark);
+mobileSunBtn.addEventListener('click', switchThemeToLight);
+
 
 function switchThemeToDark() {
   moonIcon.disabled = true;
@@ -53,10 +69,26 @@ function switchThemeToDark() {
   toggleTextRight.disabled= true;
   toggleTextLeft.disabled = false;
 
-  if (moonIcon.disabled || toggleTextLeft.disabled ) {
+    mobileMoonBtn.disabled = true;
+    mobileSunBtn.disabled = false;
+
+  if (moonIcon.disabled || toggleTextLeft.disabled || mobileMoonBtn.disabled) {
     body.style.backgroundColor = '#2E2E2E';
     darktToggleSvg.classList.toggle('is-hidden');
     lightToggleSvg.classList.toggle('is-hidden');
+
+    // MOBILE MENU
+    darktTogglePoint.classList.toggle('is-hidden');
+    lightTogglePoint.classList.toggle('is-hidden');
+    
+     mobileSunSvg.style.stroke = '#5F6775';
+    mobileMoonSvg.style.stroke = '#4440F6';
+    mobileMenu.style.backgroundColor = '#2E2E2E';
+    mobileMenuListItem.style.color = '#F4F4F4';
+   
+    mobileMenuLogo.style.color = '#F4F4F4';
+    mobileMenuCloseSvg.style.stroke = '#F4F4F4';
+
     // HEADER SECTION
     toggleTextLeft.style.color = '#5F6775';
     toggleTextRight.style.color = '#4B48DB';
@@ -89,14 +121,28 @@ function switchThemeToDark() {
 function switchThemeToLight(){
     moonIcon.disabled = false;
     sunIcon.disabled = true;
-   
     toggleTextRight.disabled= false;
-    toggleTextLeft.disabled = true;
+  toggleTextLeft.disabled = true;
   
-    if (sunIcon.disabled  || toggleTextLeft.disabled ) {
+      mobileMoonBtn.disabled = false;
+    mobileSunBtn.disabled = true;
+  
+    if (sunIcon.disabled  || toggleTextLeft.disabled || mobileSunBtn.disabled) {
       body.style.backgroundColor = '#F4F4F4';
       darktToggleSvg.classList.toggle('is-hidden');
       lightToggleSvg.classList.toggle('is-hidden');
+
+      // MOBILE MENU
+    darktTogglePoint.classList.toggle('is-hidden');
+    lightTogglePoint.classList.toggle('is-hidden');
+      
+      mobileSunSvg.style.stroke = '#4440F6';
+      mobileMoonSvg.style.stroke = '#5F6775';
+      mobileMenu.style.backgroundColor = '#F4F4F4';
+      mobileMenuLogo.style.color = '#111321'
+
+      mobileMenuCloseSvg.style.stroke = '#111321';
+      
       // HEADER SECTION
       toggleTextLeft.style.color = '#4B48DB';
       toggleTextRight.style.color = '#5F6775';
