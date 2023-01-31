@@ -2,10 +2,10 @@ import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 
 const dateInputEl = document.querySelector('#datetime-picker');
-const API_KEY = 'ef883f39deda4d31b974aca841c64d64';
+const API_KEY = 'B0nM5YVwVGPOQpaqXoXzd3AxL5Kpg75H';
 
 function makeFetchByDate(selectedDate, keyword) {
-    return fetch(`https://newsapi.org/v2/everything?q=${keyword}&from=${selectedDate}&to=${selectedDate}&apiKey=${API_KEY}`)
+    return fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${keyword}&fq=pub_date:(${selectedDate})&api-key=${API_KEY}`)
         .then(response => {
             if (!response.ok) {
       throw new Error(response.status);
@@ -37,7 +37,10 @@ const options = {
         // ourDate = ourDate.toISOString().split('T')[0];
 
         const fetch = makeFetchByDate(ourDateArr, 'ukraine')
-            .then(data => console.log(data))
+            .then(data => {
+                // ТУТ НУЖНО ВСТАВИТЬ ФУНКЦИЮ КОТОРАЯ БУДЕТ ОТРИСОВИВАТЬ РАЗМЕТКУ ПРИ ПОЗИТИВНОЙ ОТРАБОТКЕ ЗАПРОСА
+                console.log(data)
+            })
             .catch(error => console.log(error))
         return fetch
     }
