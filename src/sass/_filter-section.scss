@@ -226,6 +226,106 @@
     text-decoration: underline;
 }
 
+.filter__list {
+    display: none;
+
+    @media screen and (min-width: 768px) {
+        display: flex;  
+        gap: 14px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        gap: 16px;
+    }
+}
+
+.filter__item-desktop {
+    display: none;
+
+    @media screen and (min-width: 1280px) {
+        display: block;
+    }
+}
+.js-theme-change{
+    @media screen and (min-width: 768px){
+    color: #4440f6;
+    cursor: pointer;
+    background-color: #F4F4F4;
+    border: 1px solid #4440f6;
+    border-radius: 31px;
+    padding: 7.5px 24.5px;}
+}
+        border-radius: 20px;
+        padding: 0;
+        // color: #4440f6;
+        // cursor: pointer;
+        // background-color: #F4F4F4;
+        border: 1px solid #4440f6;
+        // border-radius: 20px;
+        height:32px;
+        width: 93px;
+}}
+
+.js-theme-change:hover,
+.js-theme-change:focus {
+    color: white;
+    background-color: $accent-color;
+}
+
+.filter__link {
+    @media screen and (min-width: 768px) {
+        padding: 0;
+        cursor: pointer;
+        // background-color: #F4F4F4;
+        // border: 1px solid #4440f6;
+        border-radius: 20px;
+        // padding: 7.5px 24.5px;
+        color: $accent-color;
+        background: transparent;
+        // border: 1px solid $accent-color;
+    }
+}
+
+.filter__link:hover,
+.filter__link:focus {
+    color: $white-color;
+    // background: $accent-color;
+    background-color: $accent-color;
+}
+
+.filter__link-desktop {
+    // @media screen and (min-width: 768px) {
+    //     padding-top: 7.5px;
+    //     padding-bottom: 7.5px;
+    //     padding-left: 24.5px;
+    //     padding-right: 24.5px;
+
+    //     color: $accent-color;
+    //     background: transparent;
+    //     border: 1px solid $accent-color;
+    //     border-radius: 20px;
+    //     cursor: pointer;
+    // }
+}
+.filter__link-desktop {
+    @media screen and (min-width: 768px) {
+
+
+   color: $accent-color;
+        background-color: transparent;
+        background: transparent;
+        border-radius: 20px;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+.filter__link-desktop:hover,
+.filter__link-desktop:focus {
+    color: $white-color;
+    background-color: $accent-color;
+}
+
 .wrapper {
     display: flex;
     justify-content: center;
