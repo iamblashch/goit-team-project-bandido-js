@@ -1,4 +1,4 @@
-.pagination {
+.pagination{
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -16,7 +16,9 @@
 
 }
 
-
+.pagination-size{
+  margin-bottom: 50px;
+} 
 
 .is-current {
   background-color: #4440F6;
