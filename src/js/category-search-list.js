@@ -13,8 +13,8 @@ async function getCategoryList() {
     const markupFilterList = response.data.results.map((arr, index) => {
         if (index < 6) {
             return `<li class="filter__item">
-        <button class="js-theme-change">
-          <a href="#" class="filter__link">${arr.display_name}</a>
+        <button class="filter__btn js-theme-change">
+          ${arr.display_name}
         </button>
       </li>`
         }
@@ -24,14 +24,14 @@ async function getCategoryList() {
     const markupOthers = response.data.results.map((arr, index) => {
          if (index > 5) {
            return `<li class="dropdown__item">
-            <a href="#" class="dropdown__link">${arr.display_name}</a>
+            <button class="dropdown__category-btn">${arr.display_name}</button>
           </li>`
         }
     }).join('')
     othersDropdownList.innerHTML = markupOthers;
 
     const markupCategories = response.data.results.map(arr => `<li class="dropdown__item">
-                            <a href="#" class="dropdown__link">${arr.display_name}</a>
+                            <button class="dropdown__category-btn">${arr.display_name}</button>
                         </li>`).join('');
     categoriesDropdownList.innerHTML = markupCategories;
 }
