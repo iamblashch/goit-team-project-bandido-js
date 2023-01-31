@@ -8,6 +8,7 @@ const moonIcon = document.querySelector('.tablet-theme-dark');
 const sunIcon = document.querySelector('.tablet-theme-light');
 const navLogo = document.querySelector('.logo');
 const navList = document.querySelector('.nav__list');
+
 const searchbar = document.querySelector('.input-search');
 const lightToggleSvg = document.querySelector('.theme-toggle-svg-light');
 const darktToggleSvg = document.querySelector('.theme-toggle-svg-dark');
@@ -15,6 +16,9 @@ const searchIcon = document.querySelector('.nav__search-icon');
 const burgerMenu = document.querySelector('.burger-menu');
 
 // FILTER SECTION
+const filterBtn =document.querySelectorAll('.js-theme-change')
+console.log(' -->', filterBtn );
+
 const filterLink = document.querySelector('.filter__link')
 const filterDesctop =document.querySelector('.filter__link-desktop')
 const filterDropDownBtn = document.querySelector('.dropdown__btn')
@@ -37,7 +41,7 @@ const dateArrowDown = document.querySelector(
 const paginationLink = document.querySelector('.pagination-link ');
 const paginationPrevious = document.querySelector('.pagination-previous');
 const paginationNext = document.querySelector('.pagination-next');
-const aelipsis = document.querySelector('pagination-ellipsis ');
+const aelipsis = document.querySelector('.pagination-ellipsis_last');
 
 
 
@@ -70,7 +74,11 @@ function switchThemeToDark() {
     navList.style.color = '#F4F4F4';
 
     // FILTER SECTION
-    filterLink.style.backgroundColor ='#FFFFFF'
+    // filterBtn[0].style.backgroundColor = '#4440F6'
+   filterBtn.forEach((element)=>{
+    element.style.backgroundColor = '#FFFFFF'
+  })
+    // filterLink.style.backgroundColor ='#FFFFFF'
     filterDesctop.style.backgroundColor ='#FFFFFF'
     filterDropDownBtn.style.backgroundColor ='#FFFFFF'
     arrowDown.style.fill = '#4440F6';
@@ -83,6 +91,12 @@ function switchThemeToDark() {
     newsTitle.style.color = '#F4F4F4';
     newsSubtitle.style.color = '#F4F4F4';
    
+    // PAGINATION
+    paginationLink.style.backgroundColor ='#FFFFFF'
+    paginationPrevious.style.backgroundColor ='#2E2E2E'
+    paginationNext.style.backgroundColor ='#2E2E2E'
+    aelipsis.style.color ='#F4F4F4'
+
   }
 }
 
@@ -110,8 +124,10 @@ function switchThemeToLight(){
       navList.style.color = '#111321';
   
       // FILTER SECTION
-      filterLink.style.backgroundColor = 'transparent';
-      filterDesctop.style.backgroundColor ='transparent'
+      filterBtn.forEach((element)=>{
+        element.style.backgroundColor = 'transparent'
+      })
+    //   filterDesctop.style.backgroundColor ='transparent'
       filterDropDownBtn.style.backgroundColor = 'transparent'
       arrowDown.style.fill = '#4B48DB';
       searchByDate.style.color = '#111321';
