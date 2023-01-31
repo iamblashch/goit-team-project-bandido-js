@@ -1,8 +1,23 @@
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
+import svg from "../img/symbol-defs.svg";
 
 const dateInputEl = document.querySelector('#datetime-picker');
+const filterSection = document.querySelector('.filter-section');
+const sectionNewsEl = document.querySelector('.section-news');
+
 const API_KEY = 'B0nM5YVwVGPOQpaqXoXzd3AxL5Kpg75H';
+let keyword;
+let order = 1;
+
+function getCategoryValue(e) {
+    if (e.target.nodeName !== `BUTTON`) {
+    return;
+  }
+  keyword = e.target.textContent.trim();
+}
+
+filterSection.addEventListener(`click`, getCategoryValue);
 
 function makeFetchByDate(selectedDate, keyword) {
     return fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${keyword}&fq=pub_date:(${selectedDate})&api-key=${API_KEY}`)
@@ -27,7 +42,7 @@ const options = {
         // },
     },
 
-    onChange(selectedDates) {
+    onClose(selectedDates) {
         let ourDate = new Date(selectedDates);
         ourDate = ourDate.toLocaleString().split(',')[0];
         ourDate = ourDate.replace(/\//g, '-');
@@ -36,14 +51,60 @@ const options = {
 
         // ourDate = ourDate.toISOString().split('T')[0];
 
-        const fetch = makeFetchByDate(ourDateArr, 'ukraine')
+        return makeFetchByDate(ourDateArr, keyword)
             .then(data => {
-                // ТУТ НУЖНО ВСТАВИТЬ ФУНКЦИЮ КОТОРАЯ БУДЕТ ОТРИСОВИВАТЬ РАЗМЕТКУ ПРИ ПОЗИТИВНОЙ ОТРАБОТКЕ ЗАПРОСА
-                console.log(data)
+                appendMarkup(data.response.docs)
             })
             .catch(error => console.log(error))
-        return fetch
     }
 }
+flatpickr(dateInputEl, options);
 
-const fp = flatpickr(dateInputEl, options);
+function createMarkupByInput(array) {
+    return array.map((data) => {
+        order += 1;
+
+        let fromatedSubTitle = data.abstract.slice(0, 120) + `...`;
+        let formatedTitle = data.headline.main.slice(0, 60) + `...`;
+        let formattedDate = data.pub_date.toString().slice(0, 10);
+        let replaceDat = formattedDate.replace(`-`, '/').replace(`-`, '/');
+        
+        if (keyword === data.section_name) {
+            return `<li class="news-item" style="order: ${order}">
+    <div class="news-thumb">
+      <img
+        class="img-news"
+        src="https://static01.nyt.com/${data.multimedia[0].url}"
+        alt="${data.multimedia[0].crop_name}"
+        width="395"
+        height="395"
+      />
+      <p class="filter-descr">${data.section_name}</p>
+      <a href="#" class="link-add"
+        >Add to favorite
+        <svg class="add-icon" width="16" heigth="16">
+          <use href="${svg}#heart-filled"></use>
+        </svg>
+      </a>
+    </div>
+    <div class="desr">
+      <h2 class="title">
+        ${formatedTitle}
+      </h2>
+      <p class="subtitle">
+        ${fromatedSubTitle}
+      </p>
+      <div class="other-line">
+        <p class="date">${replaceDat}</p>
+        <p class="hyperlink"><a href="${data.url}">Read more</a></p>
+      </div>
+    </div>
+  </li>`}
+    }).join('')
+}
+
+function appendMarkup(array) {
+    const markUp = createMarkupByInput(array)
+
+    sectionNewsEl.innerHTML = markUp;
+}
