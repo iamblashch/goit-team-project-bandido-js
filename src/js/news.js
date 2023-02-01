@@ -160,7 +160,6 @@ let ellipsis;
 let ellipsisAdd = `<span class="pagination-ellipsis_last">&hellip;</span>`
 nextPage.addEventListener(`click`, () => {
 
-  // let btn6 = document.querySelector(`.btn20`).textContent;
 
   currentElem = document.querySelector(`.is-current`)
 
@@ -204,11 +203,11 @@ nextPage.addEventListener(`click`, () => {
       }) }
 
     
-//     window.scrollTo({
-//   top: 0,
-//   behavior: "smooth",
-//   duration: 2000
-// });
+    window.scrollTo({
+  top: 0,
+  behavior: "smooth",
+  duration: 2000
+});
   setTimeout(() => {
     if (pagList.lastChild.firstElementChild.classList.contains(`is-current`)) {
     nextPage.disabled = true
@@ -264,11 +263,11 @@ previous.addEventListener(`click`, () => {
   }
  
 
-// window.scrollTo({
-//       top: 0,
-//       behavior: "smooth",
-//       duration: 2000
-//  });
+window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+      duration: 2000
+ });
 })
 
 
@@ -328,11 +327,11 @@ if (e.target.nodeName !== `A`) {
     nextPage.disabled = false
   }
     
-//     window.scrollTo({
-//       top: 0,
-//       behavior: "smooth",
-//       duration: 2000
-//  });
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+      duration: 2000
+ });
   }
   
 })
