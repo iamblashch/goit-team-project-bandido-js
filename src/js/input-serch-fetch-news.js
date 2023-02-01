@@ -2,8 +2,9 @@ import imgOps from '../img/main/img-ds.png';
 import svg from '../img/symbol-defs.svg';
 
 const searchFormEl = document.querySelector('.search-form');
-const searchBtnEl = document.querySelector('.search-button')
+const searchBtnEl = document.querySelector('.search-button');
 const sectionNewsEl = document.querySelector('.section-news');
+const newsListEl = document.querySelector('.news-list');
 const sectionPaginationEl = document.querySelector('.pagination');
 
 const API_KEY = 'B0nM5YVwVGPOQpaqXoXzd3AxL5Kpg75H';
@@ -15,22 +16,8 @@ function createMarkupIfEmpty() {
     sectionPaginationEl.innerHTML = '';
 }
 
-function catchResult() {
-    try {
-        if (data.multimedia.length === 0) {
-            imageBase = 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg'
-        }
-    } catch (error) {
-        console.log(error)
-    } finally {
-        createMarkupByInput(data)
-    }
-}
 
 function createMarkupByInput(array) {
-
-    
-    
     return array.map((data) => {
         let fromatedSubTitle = data.abstract.slice(0, 120) + `...`
       let formatedTitle = data.headline.main.slice(0, 60) + `...`
@@ -57,12 +44,12 @@ function createMarkupByInput(array) {
         height="395"
       />
       <p class="filter-descr">${data.section_name}</p>
-      <a href="#" class="link-add"
+      <button class="link-add"
         >Add to favorite
         <svg class="add-icon" width="16" heigth="16">
           <use href="${svg}#heart-filled"></use>
         </svg>
-      </a>
+      </button>
     </div>
     <div class="desr">
       <h2 class="title">
@@ -73,7 +60,7 @@ function createMarkupByInput(array) {
       </p>
       <div class="other-line">
         <p class="date">${replaceDat}</p>
-        <p target="_blank" rel="noopener noreferrer" class="hyperlink"><a href="${data.web_url}">Read more</a></p>
+        <p class="hyperlink"><a href="${data.web_url} target="_blank" rel="noopener noreferrer" ">Read more</a></p>
       </div>
     </div>
   </li>`
@@ -86,7 +73,7 @@ function createMarkupByInput(array) {
 function appendMarkup(array) {
     const markUp = createMarkupByInput(array)
 
-    sectionNewsEl.innerHTML = markUp;
+    newsListEl.innerHTML = markUp;
 }
 
 function makeFetch(keyword) {

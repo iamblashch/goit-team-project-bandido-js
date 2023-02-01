@@ -1,10 +1,13 @@
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
+import imgOps from '../img/main/img-ds.png';
 import svg from "../img/symbol-defs.svg";
 
 const dateInputEl = document.querySelector('#datetime-picker');
 const filterSection = document.querySelector('.filter-section');
 const sectionNewsEl = document.querySelector('.section-news');
+const newsListEl = document.querySelector('.news-list');
+
 
 const API_KEY = 'B0nM5YVwVGPOQpaqXoXzd3AxL5Kpg75H';
 let keyword;
@@ -18,6 +21,12 @@ function getCategoryValue(e) {
 }
 
 filterSection.addEventListener(`click`, getCategoryValue);
+
+// function createMarkupIfDataEmpty() {
+//     const markup = `<h2 class="section-news__title">Choose the category please</h2><img src="${imgOps}" alt="Ooooops" class="news-section__img-if-empty"/>`
+//     sectionNewsEl.innerHTML = markup;
+//     paginationEl.innerHTML = '';
+// }
 
 function makeFetchByDate(selectedDate, keyword) {
     return fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${keyword}&fq=pub_date:(${selectedDate})&api-key=${API_KEY}`)
@@ -53,6 +62,11 @@ const options = {
 
         return makeFetchByDate(ourDateArr, keyword)
             .then(data => {
+                console.log(data)
+                // console.log(keyword)
+                // if (keyword === undefined) {
+                //     createMarkupIfDataEmpty()
+                // }
                 appendMarkup(data.response.docs)
             })
             .catch(error => console.log(error))
@@ -80,12 +94,12 @@ function createMarkupByInput(array) {
         height="395"
       />
       <p class="filter-descr">${data.section_name}</p>
-      <a href="#" class="link-add"
+      <button class="link-add"
         >Add to favorite
         <svg class="add-icon" width="16" heigth="16">
           <use href="${svg}#heart-filled"></use>
         </svg>
-      </a>
+      </button>
     </div>
     <div class="desr">
       <h2 class="title">
@@ -96,7 +110,7 @@ function createMarkupByInput(array) {
       </p>
       <div class="other-line">
         <p class="date">${replaceDat}</p>
-        <p class="hyperlink"><a href="${data.url}">Read more</a></p>
+        <p class="hyperlink"><a href="${data.url} target="_blank" rel="noopener noreferrer"">Read more</a></p>
       </div>
     </div>
   </li>`}
@@ -106,5 +120,5 @@ function createMarkupByInput(array) {
 function appendMarkup(array) {
     const markUp = createMarkupByInput(array)
 
-    sectionNewsEl.innerHTML = markUp;
+    newsListEl.innerHTML = markUp;
 }

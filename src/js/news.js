@@ -77,12 +77,12 @@ function CreatCardNews(news) {
         height="395"
       />
       <p class="filter-descr">${news.section}</p>
-      <a href="#" class="link-add"
+      <button class="link-add"
         >Add to favorite
         <svg class="add-icon" width="16" heigth="16">
           <use href="${svg}#heart-filled"></use>
         </svg>
-      </a>
+      </button>
     </div>
     <div class="desr">
       <h2 class="title">
@@ -320,12 +320,12 @@ function CreatCardNewsCategory(news) {
         height="395"
       />
       <p class="filter-descr">${news.section_name}</p>
-      <a href="#" class="link-add"
+      <button class="link-add"
         >Add to favorite
         <svg class="add-icon" width="16" heigth="16">
           <use href="${svg}#heart-filled"></use>
         </svg>
-      </a>
+      </button>
     </div>
     <div class="desr">
       <h2 class="title">

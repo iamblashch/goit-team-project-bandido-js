@@ -193,7 +193,6 @@
     min-width: 148px;
 
     padding-top: 14px;
-    padding-right: 14px;
     padding-left: 14px;
 
     background-color: #F8F8F8;
@@ -203,8 +202,6 @@
 
     @media screen and (min-width: 320px) {
         min-width: 168px;
-
-        padding-right: 24px;
         padding-left: 24px;
     }
 }

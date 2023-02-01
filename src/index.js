@@ -8,3 +8,4 @@ import './js/pagination';
 import './js/them-toggle';
 import './js/weather-section';
 import './js/category-search-list';
+import './js/page-favorite';

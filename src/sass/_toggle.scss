@@ -12,6 +12,7 @@
     transition: all ease-in-out 0.3s;
     width: 40px;
     height: 20px;
+  }
   
   .toggle label::after {
     background-color: #4b48db;
@@ -76,5 +77,4 @@
   .toggle1 input[type='checkbox']:checked ~ label::after {
     background-color: #ffffff;
     transform: translateX(19px);
-  }
   }
