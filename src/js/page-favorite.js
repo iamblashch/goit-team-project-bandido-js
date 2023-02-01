@@ -26,6 +26,6 @@ function getCardNews(e) {
     } 
     }
 
-document.addEventListener("click", getCardNews);
+listNewsEl.addEventListener("click", getCardNews);
 
 
