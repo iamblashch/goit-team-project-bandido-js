@@ -424,6 +424,13 @@ function CreatCardNewsCategory(news) {
 
   const markupArray = news.map(news => {
     try {
+      if (news.multimedia.length > 0) {
+            imageStart = 'https://static01.nyt.com/'
+            imageBase = imageStart + news.multimedia[0].url;
+        } else if (news.multimedia.length === 0) {
+            imageBase = 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg'
+      }
+      
       order += 1
       let fromatedSubTitle = news.abstract.slice(0, 120) + `...`
       let formatedTitle = news.headline.main.slice(0, 60) + `...`
@@ -433,7 +440,7 @@ function CreatCardNewsCategory(news) {
     <div class="news-thumb">
       <img
         class="img-news"
-        src="https://static01.nyt.com/${news.multimedia[0].url}"
+        src="${imageBase}"
         alt="${news.multimedia[0].crop_name}"
         width="395"
         height="395"

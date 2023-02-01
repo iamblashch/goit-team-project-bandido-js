@@ -7,6 +7,7 @@ const dateInputEl = document.querySelector('#datetime-picker');
 const filterSection = document.querySelector('.filter-section');
 const sectionNewsEl = document.querySelector('.section-news');
 const newsListEl = document.querySelector('.news-list');
+const sectionPaginationEl = document.querySelector('.pagination');
 
 
 const API_KEY = 'B0nM5YVwVGPOQpaqXoXzd3AxL5Kpg75H';
@@ -21,12 +22,6 @@ function getCategoryValue(e) {
 }
 
 filterSection.addEventListener(`click`, getCategoryValue);
-
-// function createMarkupIfDataEmpty() {
-//     const markup = `<h2 class="section-news__title">Choose the category please</h2><img src="${imgOps}" alt="Ooooops" class="news-section__img-if-empty"/>`
-//     sectionNewsEl.innerHTML = markup;
-//     paginationEl.innerHTML = '';
-// }
 
 function makeFetchByDate(selectedDate, keyword) {
     return fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${keyword}&fq=pub_date:(${selectedDate})&api-key=${API_KEY}`)
@@ -46,9 +41,6 @@ const options = {
     shorthand: true,
     locale: {
         firstDayOfWeek: 1,
-        // weekdays: {
-        //     shorthand: ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
-        // },
     },
 
     onClose(selectedDates) {
@@ -58,16 +50,17 @@ const options = {
         ourDateArr = Array.from(ourDate);
         ourDateArr = ourDateArr[6] + ourDateArr[7] + ourDateArr[8] + ourDateArr[9] + ourDateArr[5] + ourDateArr[3] + ourDateArr[4] + ourDateArr[2] + ourDateArr[0] + ourDateArr[1];
 
-        // ourDate = ourDate.toISOString().split('T')[0];
-
         return makeFetchByDate(ourDateArr, keyword)
             .then(data => {
-                console.log(data)
-                // console.log(keyword)
-                // if (keyword === undefined) {
-                //     createMarkupIfDataEmpty()
-                // }
-                appendMarkup(data.response.docs)
+              console.log(data.response.docs)
+              console.log(keyword)
+              if (keyword === undefined) {
+                createMarkupIfDataEmpty()
+              } else if (data.response.docs.length === 0) {
+                createMarkupIfFoundNothing()
+              }
+              appendMarkup(data.response.docs)
+              
             })
             .catch(error => console.log(error))
     }
@@ -81,14 +74,24 @@ function createMarkupByInput(array) {
         let fromatedSubTitle = data.abstract.slice(0, 120) + `...`;
         let formatedTitle = data.headline.main.slice(0, 60) + `...`;
         let formattedDate = data.pub_date.toString().slice(0, 10);
-        let replaceDat = formattedDate.replace(`-`, '/').replace(`-`, '/');
+      let replaceDat = formattedDate.replace(`-`, '/').replace(`-`, '/');
+      
+      let imageStart;
+        let imageBase;
+
+        if (data.multimedia.length > 0) {
+            imageStart = 'https://static01.nyt.com/'
+            imageBase = imageStart + data.multimedia[0].url;
+        } else if (data.multimedia.length === 0) {
+            imageBase = 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg'
+        }
         
         if (keyword === data.section_name) {
             return `<li class="news-item" style="order: ${order}">
     <div class="news-thumb">
       <img
         class="img-news"
-        src="https://static01.nyt.com/${data.multimedia[0].url}"
+        src="${imageBase}"
         alt="${data.multimedia[0].crop_name}"
         width="395"
         height="395"
@@ -118,7 +121,24 @@ function createMarkupByInput(array) {
 }
 
 function appendMarkup(array) {
-    const markUp = createMarkupByInput(array)
+  const markUp = createMarkupByInput(array)
+  
+  if (array.length === 0) {
+    return createMarkupIfDataEmpty()
+  }
 
     newsListEl.innerHTML = markUp;
+}
+
+
+function createMarkupIfDataEmpty() {
+    const markup = `<h2 class="section-news__title">Please update page and choose the search category</h2><img src="${imgOps}" alt="Ooooops" class="news-section__img-if-empty"/>`
+    sectionNewsEl.innerHTML = markup;
+    sectionPaginationEl.innerHTML = '';
+}
+
+function createMarkupIfFoundNothing() {
+  const markup = `<h2 class="section-news__title">We haven’t found news from this category</h2><img src="${imgOps}" alt="Ooooops" class="news-section__img-if-empty"/>`
+    sectionNewsEl.innerHTML = markup;
+    sectionPaginationEl.innerHTML = '';
 }

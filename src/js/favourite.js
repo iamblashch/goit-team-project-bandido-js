@@ -1,35 +1,46 @@
 const listFavEl = document.querySelector('.news-list-fav');
-console.log(listFavEl)
+const favBtnEl = document.querySelector('.link-add')
 
+createFavCardsMarkup();
 
 function createFavCardsMarkup() {
     
     const loc = localStorage.getItem('markup-news-card')
-        console.log(loc)
-    
-    listFavEl.innerHTML = loc
+    let pars = JSON.parse(loc)
+    console.log(typeof loc)
+    console.log(pars)
 
+    pars.map(item => {
+        listFavEl.insertAdjacentHTML('beforeend', item.data)
+    })
 }
 
-// function clearFavCardsMarkup() {
-//     listFavEl.insertAdjacentHTML('afterbegin', )
-// }
+function clearFavCardsMarkup() {
+        listFavEl.innerHTML = ''
+}
 
-createFavCardsMarkup();
 
 function handleDelete(e) {
     if (e.target.nodeName !== `BUTTON`) {
         return;
     }
     const btnfav__fav = e.target;
-    console.log(btnfav__fav)
+    const hrefVal = { href: e.target.parentNode.children[0].src }
+    const loc = localStorage.getItem('markup-news-card')
+    let pars = JSON.parse(loc)
+ 
+    const index = pars.findIndex(item => {
+        return  item.hrefVal.href === hrefVal.href
+    })
 
-    if (btnfav__fav.classList.contains('add-to-fav')) {
-
-        localStorage.removeItem("markup-news-card")
-        // clearFavCardsMarkup()
-
-    } 
+    console.log(index)
+        if (index > -1) {
+            pars.splice(index, 1)
+            console.log(pars)
+            localStorage.setItem('markup-news-card', JSON.stringify(pars))
+        }
+    clearFavCardsMarkup()
+    createFavCardsMarkup()
 
 }
 
