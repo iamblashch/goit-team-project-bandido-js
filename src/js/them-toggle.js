@@ -180,10 +180,16 @@
 // HEADER SECTION
 const body = document.querySelector('body');
 const logo = document.querySelector('.logo');
-const navItems = document.querySelectorAll('.nav__item');
+// const navItems = document.querySelectorAll('.nav__item');
+const navLinks = document.querySelectorAll('.nav__link');
+console.log(' -->',navLinks  );
+
+
 const searchInput = document.querySelector('.search-input');
 const searchIcon = document.querySelector('.icon-search');
 const textInput = document.getElementById('placeholder').placeholder;
+// console.log(' -->',textInput  );
+
 // const searchIconMob = document.querySelector('.nav__search');
 const burgerMenu = document.querySelector('.nav__svg');
 const sunIcon = document.querySelector('.sun-icon');
@@ -191,7 +197,9 @@ const moonIcon = document.querySelector('.moon-icon');
 const lightText = document.getElementById('toggle-text-left');
 const darkText = document.getElementById('toggle-text-right');
 const toggle = document.querySelector('.toggle');
+
 const headerBorder = document.querySelector('.header');
+console.log(' -->',lightText );
 
 // FILTER SECTION
 const filterBtns = document.querySelectorAll('.js-theme-change');
@@ -199,11 +207,16 @@ const dropdownBtn  = document.querySelector('.js-dropdown-btn');
 const arrowDown = document.querySelector('.dropdown__btn-icon-arrow-down')
 const arrowUp= document.querySelector('.dropdown__btn-icon-arrow-up')
 const filterText = document.querySelector('.js-filter-text');
-const datePicker = document.querySelector('.datetime-picker__input');
+const datePicker = document.getElementById("datetime-picker");
+
+
 
  // NEWS SECTION
-const newsTitles = document.querySelectorAll('.title')
+const newsTitles = document.querySelectorAll('h2')
 const newsSubtitles = document.querySelectorAll('.subtitle')
+
+
+
 
 let themeStorage = localStorage.getItem('themeStorage');
 
@@ -212,15 +225,12 @@ document.addEventListener('DOMContentLoaded', event => {
     themeChange(event);
   }
 });
-// toggle.addEventListener('click',colorTheme)
-//   if(themeKey === 'dark'){
-//     toggle.checked=true;}
-//     else{toggle.checked=false;}
 
-toggle.addEventListener('click', themeChange);
-if(themeStorage === 'dark'){
-      toggle.checked=true;}
-      else{toggle.checked=false;}
+
+toggle.addEventListener('click', themeChange)
+  if(themeStorage === 'dark'){
+    toggle.checked=true;}
+    else{toggle.checked=false;}
 
 
 function themeChange(e) {
@@ -230,42 +240,79 @@ function themeChange(e) {
     localStorage.setItem('themeStorage', themeStorage);
   }
 
-  body.style.backgroundColor = '#2E2E2E';
+  body.classList.toggle('body--dark-theme');
+  logo.classList.toggle('logo--dark-theme');
+  navLinks.forEach(element=>{element.classList.toggle('dark-theme')})
+  searchInput.classList.toggle('search-input--dark-theme');
+  searchIcon.classList.toggle('icon-search--dark-theme');
+  // textInput.classList.toggle('.input--dark-theme::placeholder')
+  burgerMenu.classList.toggle('nav__svg--dark-theme');
+  sunIcon.classList.toggle('sun-icon--dark-theme');
+  moonIcon.classList.toggle('moon-icon--dark-theme');
+  lightText.classList.toggle('toggle-text-left--dark-theme');
+  darkText.classList.toggle('toggle-text-right--dark-theme');
+  headerBorder.classList.toggle('header--dark-theme');
 
-  // HEADER SECTION
-  logo.style.color = '#F4F4F4';
-  navItems.forEach(element => {
-    element.style.color = '#F4F4F4';
-  });
-  searchInput.style.border = '1px solid #F4F4F4'
-  searchInput.style.color = '#F4F4F4'
-  searchIcon.style.fill ='#F4F4F4'
-  // textInput.style.color ='#F4F4F4'
-  burgerMenu.style.stroke = '#F4F4F4'
-  sunIcon.style.stroke ='#5F6775'
-  moonIcon.style.stroke ='#4B48DB'
-  lightText.style.color = '#5F6775'
-  darkText.style.color = '#4B48DB'
-  headerBorder.style.border = '1px solid rgba(244, 244, 244, 0.2)'
-
-// FILTER SECTION
-filterBtns.forEach(element => {
-    element.style.backgroundColor = '#F4F4F4';
-  });
-  dropdownBtn.style.backgroundColor = '#F4F4F4';
-  // btns hover+focus
-  datePicker.style.border = '1px solid #F4F4F4'
-  filterText.style.color = '#F4F4F4'
-  // arrowDown.style.stroke ='#F4F4F4'
-  arrowUp.style.stroke ='#F4F4F4'
+  toggle.classList.toggle('toggle---dark-theme');
 
 
-  // NEWS SECTION
-  newsTitles.forEach(element => {
-    element.style.color = '#F4F4F4';
-  });
-  newsSubtitles.forEach(element => {
-    element.style.color = '#F4F4F4';
-  });
+ filterBtns.forEach(element=>{element.classList.toggle('filter-btn--dark-theme')});
+dropdownBtn.classList.toggle('dropdown-btn--dark-theme');
+// arrowDown.classList.toggle('.dropdown__btn-icon-arrow-down')
+arrowUp.classList.toggle('dropdown__btn-icon-arrow-up--dark-theme')
+filterText.classList.toggle('filter-section__text--dark-theme');
+datePicker.classList.toggle('input__dark__theme');
 
+
+
+ // NEWS SECTION
+newsTitles.forEach((element)=>{element.classList.toggle('dark-theme')});
+newsSubtitles.forEach((element)=>{element.classList.toggle('dark-theme')});
 }
+// console.log(' -->', newsTitles);
+
+//   body.style.backgroundColor = '#2E2E2E';
+
+//   // HEADER SECTION
+//   logo.style.color = '#F4F4F4';
+//   navItems.forEach(element => {
+//     element.style.color = '#F4F4F4';
+//   });
+//   searchInput.style.border = '1px solid #F4F4F4'
+//   searchInput.style.color = '#F4F4F4'
+//   searchIcon.style.fill ='#F4F4F4'
+//   // textInput.placeholder.color ='#F4F4F4'
+//   burgerMenu.style.stroke = '#F4F4F4'
+//   sunIcon.style.stroke ='#5F6775'
+//   moonIcon.style.stroke ='#4B48DB'
+//   lightText.style.color = '#5F6775'
+//   darkText.style.color = '#4B48DB'
+//   headerBorder.style.border = '1px solid rgba(244, 244, 244, 0.2)'
+
+// // FILTER SECTION
+// filterBtns.forEach(element => {
+//     element.style.backgroundColor = '#F4F4F4';
+//   });
+//   dropdownBtn.style.backgroundColor = '#F4F4F4';
+//   // btns hover+focus
+//   console.log(' -->',datePicker );
+  
+//   datePicker.style.border = 'white';
+
+ 
+//   filterText.style.color = '#F4F4F4'
+//   // arrowDown.style.stroke ='#F4F4F4'
+//   arrowUp.style.stroke ='#F4F4F4'
+
+
+//   // NEWS SECTION
+//   newsTitles.forEach(element => {
+//     element.style.color = '#F4F4F4';
+//   });
+//   newsSubtitles.forEach(element => {
+//     element.style.color = '#F4F4F4';
+//   });
+
+
+
+// }
