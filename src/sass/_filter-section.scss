@@ -146,8 +146,8 @@
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown__btn:hover,
 .dropdown__btn:focus {
-    color: $white-color;
-    background-color: $accent-color;
+    color: rgba(244, 244, 244, 0.2);
+    background-color: #4440F6;
 }
 
 .dropdown__btn-icon-arrow-down {
