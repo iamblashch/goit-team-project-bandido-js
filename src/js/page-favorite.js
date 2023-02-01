@@ -33,7 +33,7 @@ function getCardNews(e) {
             hrefVal,
         })
 
-        targetBtn.disabled = true
+       // targetBtn.disabled = true
         let arrJson = JSON.stringify(arrNewMarkup);
 
 
