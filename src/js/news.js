@@ -99,6 +99,9 @@ function CreatCardNews(news) {
   </li>`;
   });
   sectionCard.innerHTML = markupArray.join('');
+  
+  sectionCard.insertAdjacentHTML('afterbegin', weather());
+
   sectionCard.insertAdjacentHTML('afterbegin', weather.innerHTML);
   // setTimeout(() => {
   // }, 10);
@@ -120,45 +123,70 @@ const pagList = document.querySelector(`.pagination-list`)
 let btn1;
 let numberPagePagination = 1;
 let murkupPagination
+
 function creatElmNumber() {
-  let numberAllPage = allPageNumber;
+let numberAllPage = allPageNumber
+
   for (let index = 0; index < numberAllPage; index++) {
-    if (numberAllPage <= 4) {
+    if (numberAllPage <= 5) {
       murkupPagination = `<li><a class="pagination-link btn${numberPagePagination}" data${numberPagePagination}>${numberPagePagination}</a></li>`
       numberPagePagination += 1
       pagList.innerHTML += murkupPagination;
     } 
   }
-  if (numberAllPage > 4) {
+  if (numberAllPage > 6) {
     murkupPagination = `
-    <li><a class="pagination-link btn1" data1>1</a></li>
+     <li><a class="pagination-link btn1" data1>1</a></li>
+     <div class="ellipsis"></div>
      <li><a class="pagination-link btn2" data2>2</a></li>
      <li><a class="pagination-link btn3" data3>3</a></li>
      <li><a class="pagination-link btn4" data4>4</a></li>
      <li><a class="pagination-link btn5" data5>5</a></li>
      <div class="pagination-ellipsis_item2"><span class="pagination-ellipsis_last">&hellip;</span></div>
-   
-     <li><a class="pagination-link btn" data5>20</a></li>`
+     <li><a class="pagination-link btnLast" data5>${numberAllPage}</a></li>`
     pagList.innerHTML = murkupPagination;
   } 
   btn1 = document.querySelector(`.btn1`)
   btn1.classList.add(`is-current`)
+
+
 }
 
 
 let indicator = false;
 let currentElem;
 let numberAtribute = 1;
+let ellipsis;
+let ellipsisAdd = `<span class="pagination-ellipsis_last">&hellip;</span>`
 nextPage.addEventListener(`click`, () => {
 
-  previous.disabled = false
+  // let btn6 = document.querySelector(`.btn20`).textContent;
 
+  currentElem = document.querySelector(`.is-current`)
+
+  previous.disabled = false
   numberAtribute += 1;
-  currentElem = document.querySelector(`.is-current`)
-  let currentAtribute = document.querySelector(`[data${numberAtribute}]`)
-  currentElem.classList.remove(`is-current`)
-  currentAtribute.classList.add(`is-current`)
-  currentElem = document.querySelector(`.is-current`)
+  if (Number(currentElem.textContent) < 5) {
+    let currentAtribute = document.querySelector(`[data${numberAtribute}]`)
+    currentElem.classList.remove(`is-current`)
+    currentAtribute.classList.add(`is-current`)
+    currentElem = document.querySelector(`.is-current`)
+  } else {
+    let btn2 = document.querySelector(`.btn2`);
+    let btn3 = document.querySelector(`.btn3`);
+    let btn4 = document.querySelector(`.btn4`);
+    let btn5 = document.querySelector(`.btn5`);
+    btn2.textContent = (Number(btn2.textContent) + 1)
+    btn3.textContent = (Number(btn3.textContent) + 1)
+    btn4.textContent = (Number(btn4.textContent) + 1)
+    btn5.textContent = (Number(btn5.textContent) + 1)
+  }
+
+  if (Number(currentElem.textContent) >= 6) {
+    ellipsis = document.querySelector(`.ellipsis`)
+    ellipsis.innerHTML = ellipsisAdd
+  }
+
 
   if (!indicator) {
     newsCounter += 8
@@ -173,15 +201,14 @@ nextPage.addEventListener(`click`, () => {
     .then(news => {
       CreatCardNewsCategory(news)
       console.log(news)
- 
       }) }
 
     
-    window.scrollTo({
-  top: 0,
-  behavior: "smooth",
-  duration: 2000
-});
+//     window.scrollTo({
+//   top: 0,
+//   behavior: "smooth",
+//   duration: 2000
+// });
   setTimeout(() => {
     if (pagList.lastChild.firstElementChild.classList.contains(`is-current`)) {
     nextPage.disabled = true
@@ -191,15 +218,32 @@ nextPage.addEventListener(`click`, () => {
 })
 
 previous.addEventListener(`click`, () => {
-
-numberAtribute -= 1;
-nextPage.disabled = false
+ let lastBtn = document.querySelector(`.btnLast`)
   currentElem = document.querySelector(`.is-current`)
-  let currentAtribute = document.querySelector(`[data${numberAtribute}]`)
-  currentElem.classList.remove(`is-current`)
-  currentAtribute.classList.add(`is-current`)
-
+  let btn2Prev = document.querySelector(`.btn2`);
+  numberAtribute -= 1;
+  nextPage.disabled = false
+  if (Number(currentElem.textContent) <= 5) {
+    let currentAtribute = document.querySelector(`[data${numberAtribute}]`)
+    currentElem.classList.remove(`is-current`)
+    currentAtribute.classList.add(`is-current`)
+    currentElem = document.querySelector(`.is-current`)
+  }else {
+    let btn1Prev = document.querySelector(`.btn1`);
+    let btn2Prev = document.querySelector(`.btn2`);
+    let btn3Prev = document.querySelector(`.btn3`);
+    let btn4Prev = document.querySelector(`.btn4`);
+    let btn5Prev = document.querySelector(`.btn5`);
+    btn2Prev.textContent = (Number(btn2Prev.textContent) - 1)
+    btn3Prev.textContent = (Number(btn3Prev.textContent) - 1)
+    btn4Prev.textContent = (Number(btn4Prev.textContent) - 1)
+    btn5Prev.textContent = (Number(btn5Prev.textContent) - 1)
+  }
   currentElem = document.querySelector(`.is-current`)
+  if (Number(currentElem.textContent) < 6 && ellipsis) {
+    ellipsis.innerHTML = ``
+  }
+
   if (currentElem.textContent === `1`) {
     previous.disabled = true
   }
@@ -212,17 +256,88 @@ nextPage.disabled = false
   }
   if (indicator) {
     numberPageAPI -= 1
-    makeFetchByCategory(news)
-      .then(news => {
-      CreatCardNewsCategory(news);
-      }) }
+    makeFetchByCategory(categorySearch)
+    .then(news => {
+      CreatCardNewsCategory(news)
+      console.log(news)
+    })
+  }
  
-window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-      duration: 2000
- });
+
+// window.scrollTo({
+//       top: 0,
+//       behavior: "smooth",
+//       duration: 2000
+//  });
 })
+
+
+// ***************
+pagList.addEventListener(`click`, (e) => {
+  let btn1 = document.querySelector(`.btn1`);
+  let btn2 = document.querySelector(`.btn2`);
+  let btn3 = document.querySelector(`.btn3`);
+  let btn4 = document.querySelector(`.btn4`);
+  let btn5 = document.querySelector(`.btn5`);
+  let lastBtn = document.querySelector(`.btnLast`)
+
+
+if (e.target.nodeName !== `A`) {
+  return 
+  }
+  if (indicator) {
+    numberPageAPI = e.target.textContent
+    makeFetchByCategory(categorySearch)
+      .then(news => {
+        CreatCardNewsCategory(news)
+        console.log(news)
+      })
+  currentElem = document.querySelector(`.is-current`)
+  currentElem.classList.remove(`is-current`)
+    e.target.classList.add(`is-current`)
+    currentElem = document.querySelector(`.is-current`)
+    
+    if (Number(currentElem.textContent) < 6 && ellipsis) {
+      const ellipsisLast = document.querySelector(`.pagination-ellipsis_item2`)
+      ellipsisLast.classList.remove(`is-hidden`)
+      ellipsis.innerHTML = ``
+    } else if (e.target.textContent > 6) {
+      ellipsis = document.querySelector(`.ellipsis`)
+      ellipsis.innerHTML = ellipsisAdd
+      const ellipsisLast = document.querySelector(`.pagination-ellipsis_item2`)
+      ellipsisLast.classList.add(`is-hidden`)
+    }
+    if (e.target.textContent === lastBtn.textContent) {
+      console.log(`err`)
+      btn2.textContent = (Number(lastBtn.textContent) -4)
+      btn3.textContent = (Number(lastBtn.textContent) -3)
+      btn4.textContent = (Number(lastBtn.textContent) -2)
+      btn5.textContent = (Number(lastBtn.textContent) - 1)
+      previous.disabled = false
+      nextPage.disabled = true
+    }
+     if (e.target.textContent === btn1.textContent) {
+      btn2.textContent = (Number(btn1.textContent) +1)
+      btn3.textContent = (Number(btn1.textContent) +2)
+      btn4.textContent = (Number(btn1.textContent) +3)
+      btn5.textContent = (Number(btn1.textContent) +4)
+       previous.disabled = true
+       nextPage.disabled = false
+    }
+ if (e.target !== lastBtn) {
+    nextPage.disabled = false
+  }
+    
+//     window.scrollTo({
+//       top: 0,
+//       behavior: "smooth",
+//       duration: 2000
+//  });
+  }
+  
+})
+
+
 
 
 
@@ -266,6 +381,10 @@ function makeFetchByCategory(categorySearch) {
         `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${categorySearch}&page=${numberPageAPI}&api-key=${API_KEY}`
       )
       .then(response => {
+
+        if (Math.ceil(response.data.response.meta.hits / 8) < 20) {
+          allPageNumber = Math.ceil(response.data.response.meta.hits / 8)
+        }else {allPageNumber = 20}
         resolve(response.data.response.docs);
       })
       .catch(error => {
@@ -275,6 +394,7 @@ function makeFetchByCategory(categorySearch) {
 }
 let categorySearch;
 filterBTN.addEventListener(`click`, (e) => {
+  nextPage.disabled = false
   numberAtribute = 1;
   numberPageAPI = 0
 if (e.target.nodeName !== `BUTTON`) {
@@ -296,12 +416,12 @@ if (e.target.nodeName !== `BUTTON`) {
     })
 })
 let stopPaginationRender = false;
-let newsCounterFilter = 0;
+
 
 function CreatCardNewsCategory(news) {
-  console.log(news)
+
   order = 1;
-  allPageNumber = 5
+
 
   const markupArray = news.map(news => {
     try {
@@ -340,8 +460,7 @@ function CreatCardNewsCategory(news) {
       </div>
     </div>
   </li>`} catch (err) { console.log(err) }
-  })
-;
+  });
 
   
   sectionCard.innerHTML = markupArray.join('');
