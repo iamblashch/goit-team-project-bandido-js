@@ -14,7 +14,7 @@ const ListenerNumberPage = document.querySelector(`.pagination`);
 const nextPageNews = document.querySelector(`.pagination-next`);
 const previousNews = document.querySelector(`.pagination-previous`);
 const filterBTN = document.querySelector(`.filter-section__container`)
-
+const weather = document.querySelector('.weather-box')
 
 let allPageNumber = 1;
 function newsAPI() {
@@ -99,7 +99,7 @@ function CreatCardNews(news) {
   </li>`;
   });
   sectionCard.innerHTML = markupArray.join('');
-  sectionCard.insertAdjacentHTML('afterbegin', weather());
+  sectionCard.insertAdjacentHTML('afterbegin', weather.innerHTML);
   // setTimeout(() => {
   // }, 10);
 }
@@ -226,37 +226,37 @@ window.scrollTo({
 
 
 
-function weather() {
-  return `<div class="weather">
-  <div class="weather-container">
-    <div class="weather-and-location">
-      <div class="degrees">20&deg;</div>
-      <div class="location-box">
-        <p class="sky">Sunny</p>
-        <p class="current-city">
-          <svg class="current-city__icon-location">
-            <use href="${svg}#location"></use></svg
-          >Jakarta
-        </p>
-      </div>
-    </div>
-    <div>
-      <img
-        class="weatheh-image"
-        src="https://openweathermap.org/img/wn/04n@4x.png"
-        alt=""
-      />
-    </div>
-    <p class="current-data"></p>
-    <a
-      class="weather-for-week"
-      target="_blank"
-      href="https://openweathermap.org/city/689487"
-      >weather for week</a
-    >
-  </div>
-</div>`;
-}
+// function weather() {
+//   return `<div class="weather">
+//   <div class="weather-container">
+//     <div class="weather-and-location">
+//       <div class="degrees">20&deg;</div>
+//       <div class="location-box">
+//         <p class="sky">Sunny</p>
+//         <p class="current-city">
+//           <svg class="current-city__icon-location">
+//             <use href="${svg}#location"></use></svg
+//           >Jakarta
+//         </p>
+//       </div>
+//     </div>
+//     <div>
+//       <img
+//         class="weatheh-image"
+//         src="https://openweathermap.org/img/wn/04n@4x.png"
+//         alt=""
+//       />
+//     </div>
+//     <p class="current-data"></p>
+//     <a
+//       class="weather-for-week"
+//       target="_blank"
+//       href="https://openweathermap.org/city/689487"
+//       >weather for week</a
+//     >
+//   </div>
+// </div>`;
+// }
 
 let numberPageAPI = 0;
 function makeFetchByCategory(categorySearch) {
@@ -346,7 +346,7 @@ function CreatCardNewsCategory(news) {
   
   sectionCard.innerHTML = markupArray.join('');
   setTimeout(() => {
-    sectionCard.insertAdjacentHTML('afterbegin', weather());
+    sectionCard.insertAdjacentHTML('afterbegin', weather.innerHTML);
   }, 10);
 
   if (stopPaginationRender === false) {
