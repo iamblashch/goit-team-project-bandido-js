@@ -11,14 +11,13 @@ async function getCategoryList() {
     const response = await axios(`https://api.nytimes.com/svc/news/v3/content/section-list.json?api-key=${API_KEY_NYT}`);
     
     const markupFilterList = response.data.results.map((arr, index) => {
-        if (index < 6) {
-            return `<li class="filter__item">
+        if (index < 6) `<li class="filter__item">
         <button class="filter__btn js-theme-change">
           ${arr.display_name}
         </button>
       </li>`
         }
-    }).join('');
+    ).join('');
     filterList.innerHTML = markupFilterList;
 
     const markupOthers = response.data.results.map((arr, index) => {

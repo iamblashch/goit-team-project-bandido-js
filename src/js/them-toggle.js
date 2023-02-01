@@ -21,7 +21,6 @@ const burgerMenu = document.querySelector('.burger-menu');
 
 // FILTER SECTION
 const filterBtn = document.querySelectorAll('.js-theme-change');
-console.log(' -->', filterBtn);
 
 const filterLink = document.querySelector('.filter__link');
 const filterDesctop = document.querySelector('.filter__link-desktop');
@@ -66,6 +65,8 @@ sunIcon.addEventListener('click', switchThemeToLight);
 moonIcon.addEventListener('click', switchThemeToDark);
 toggleTextLeft.addEventListener('click', switchThemeToLight);
 toggleTextRight.addEventListener('click', switchThemeToDark);
+toggle.addEventListener('click', switchThemeToLight);
+toggle.addEventListener('click', switchThemeToDark);
 
 function switchThemeToDark(e) {
   if (e.type === 'click') {
@@ -78,8 +79,12 @@ function switchThemeToDark(e) {
   sunIcon.disabled = false;
   toggleTextRight.disabled = true;
   toggleTextLeft.disabled = false;
+  toggle.disabled= true;
+  toggle.disabled= false;
 
-  if (moonIcon.disabled || toggleTextLeft.disabled ) {
+
+
+  if (moonIcon.disabled || toggleTextLeft.disabled || toggle.disabled ) {
     body.style.backgroundColor = '#2E2E2E';
     darktToggleSvg.classList.toggle('is-hidden');
     lightToggleSvg.classList.toggle('is-hidden');
@@ -132,7 +137,7 @@ function switchThemeToLight(e) {
   toggleTextRight.disabled = false;
   toggleTextLeft.disabled = true;
 
-  if (sunIcon.disabled || toggleTextLeft.disabled) {
+  if (sunIcon.disabled || toggleTextLeft.disabled || toggle.disabled) {
     body.style.backgroundColor = '#F4F4F4';
     darktToggleSvg.classList.toggle('is-hidden');
     lightToggleSvg.classList.toggle('is-hidden');
