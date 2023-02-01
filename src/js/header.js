@@ -1,8 +1,7 @@
 const searchInputEl = document.querySelector('.search-input');
 const searchBtnEl = document.querySelector('.search-button');
 
-function showInput(event) {
-    event.preventDefault();
+function showInput() {
     searchInputEl.style.opacity = 1;
     searchBtnEl.style.left = 0;
 }
