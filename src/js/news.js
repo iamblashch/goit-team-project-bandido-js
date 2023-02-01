@@ -100,7 +100,7 @@ function CreatCardNews(news) {
   });
   sectionCard.innerHTML = markupArray.join('');
   
-  sectionCard.insertAdjacentHTML('afterbegin', weather());
+  // sectionCard.insertAdjacentHTML('afterbegin', weather());
 
   sectionCard.insertAdjacentHTML('afterbegin', weather.innerHTML);
   // setTimeout(() => {

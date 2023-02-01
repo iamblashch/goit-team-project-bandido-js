@@ -12,7 +12,7 @@
     transition: all ease-in-out 0.3s;
     width: 40px;
     height: 20px;
-  }
+}
   
 .toggle-theme-switch::after {
     background-color: #4b48db;
@@ -38,9 +38,6 @@
     transform: translateX(19px);
 }
  
-
-
-
 //  DARK THEME STYLES
 .body--dark-theme {
   background-color:#2E2E2E; 
@@ -108,11 +105,10 @@ border: 1px solid rgba(244, 244, 244, 0.2);
 .filter-section__text--dark-theme{
 color:#F4F4F4;
 }
+
 .datetime-picker__input--dark-theme{
 border: 1px solid #F4F4F4;
 }
-
-
 
  // NEWS SECTION
 .title--dark-theme{

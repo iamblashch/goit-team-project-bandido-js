@@ -36,12 +36,12 @@
     }
 }
 
-.filter__item-desktop {
-    display: none;
-
-    @media screen and (min-width: 1280px) {
-        display: block;
+.filter__btn-desktop {
+    @media screen and (max-width:1279px) {
+        display: none;
+        
     }
+
 }
 
 .filter__btn {

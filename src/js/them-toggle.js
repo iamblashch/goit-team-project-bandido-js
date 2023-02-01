@@ -182,7 +182,7 @@ const body = document.querySelector('body');
 const logo = document.querySelector('.logo');
 // const navItems = document.querySelectorAll('.nav__item');
 const navLinks = document.querySelectorAll('.nav__link');
-console.log(' -->',navLinks  );
+
 
 
 const searchInput = document.querySelector('.search-input');
@@ -199,7 +199,6 @@ const darkText = document.getElementById('toggle-text-right');
 const toggle = document.querySelector('.toggle');
 
 const headerBorder = document.querySelector('.header');
-console.log(' -->',lightText );
 
 // FILTER SECTION
 const filterBtns = document.querySelectorAll('.js-theme-change');
@@ -212,8 +211,10 @@ const datePicker = document.getElementById("datetime-picker");
 
 
  // NEWS SECTION
-const newsTitles = document.querySelectorAll('h2')
+const newsTitles = document.querySelector('.news-list')
 const newsSubtitles = document.querySelectorAll('.subtitle')
+console.log('object :>> ', newsTitles);
+
 
 
 
