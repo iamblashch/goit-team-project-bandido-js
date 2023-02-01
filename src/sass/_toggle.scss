@@ -1,8 +1,8 @@
-.toggle input[type='checkbox'] {
+.toggle {
     display: none;
   }
   
-.toggle label {
+.toggle-theme-switch {
     background-color: #ffffff;
     border: 0.604701px solid #4b48db;
     border-radius: 20px;
@@ -14,7 +14,7 @@
     height: 20px;
   }
   
-.toggle label::after {
+.toggle-theme-switch::after {
     background-color: #4b48db;
     border-radius: 20px;
     content: '';
@@ -37,44 +37,98 @@
     background-color: #ffffff;
     transform: translateX(19px);
 }
-  
-  // бiгунок для таблетки
-  .toggle1 input[type='checkbox'] {
-    display: none;
-  }
-  
-  .toggle1 label {
-    background-color: #ffffff;
-    border: 0.604701px solid #4b48db;
-    border-radius: 20px;
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: all ease-in-out 0.3s;
-    width: 40px;
-    height: 20px;
-  }
-  
-  .toggle1 label::after {
-    background-color: #4b48db;
-    border-radius: 20px;
-    content: '';
-    cursor: pointer;
-    display: inline-block;
-    position: absolute;
-    left: 1.5px;
-    top: 1.5px;
-    transition: all ease-in-out 0.3s;
-    width: 16px;
-    height: 16px;
-  }
-  
-  .toggle1 input[type='checkbox']:checked ~ label {
-    background-color: #4440f7;
-    border: 1px solid #ffffff;
-  }
-  
-  .toggle1 input[type='checkbox']:checked ~ label::after {
-    background-color: #ffffff;
-    transform: translateX(19px);
-  }
+ 
+
+
+
+//  DARK THEME STYLES
+.body--dark-theme {
+  background-color:#2E2E2E; 
+}
+
+.logo--dark-theme{
+color: #F4F4F4;
+}
+
+.nav__link--dark-theme{
+  color: #F4F4F4;
+}
+
+.search-input--dark-theme{
+border: 1px solid #F4F4F4;
+color:  #F4F4F4;
+}
+
+.icon-search--dark-theme{
+fill: #F4F4F4;
+}
+
+.input--dark-theme{
+ color: #F4F4F4;
+}
+
+.nav__svg--dark-theme{
+stroke:  #F4F4F4;
+}
+.sun-icon--dark-theme{
+  stroke: #5F6775;
+
+}
+
+.moon-icon--dark-theme{
+  stroke: #4B48DB;
+}
+
+
+.toggle-text-left--dark-theme{
+color:#F4F4F4;
+}
+
+.toggle-text-right--dark-theme{
+  color: #4B48DB;
+}
+.toggle---dark-theme{
+
+}
+.header--dark-theme{
+border: 1px solid rgba(244, 244, 244, 0.2);
+}
+
+// FILTER SECTION
+.filter-btn--dark-theme{
+  background-color: #F4F4F4
+}
+.dropdown-btn--dark-theme{
+  background-color: #F4F4F4;
+}
+// .dropdown__btn-icon-arrow-down--dark-theme{
+// stroke:  #F4F4F4;
+// }
+.dropdown__btn-icon-arrow-up--dark-theme{
+  stroke:  #F4F4F4;
+}
+.filter-section__text--dark-theme{
+color:#F4F4F4;
+}
+.datetime-picker__input--dark-theme{
+border: 1px solid #F4F4F4;
+}
+
+
+
+ // NEWS SECTION
+.title--dark-theme{
+color: #F4F4F4;
+}
+.subtitle--dark-theme{
+  color: #F4F4F4;
+}
+.dark-theme{
+  color: #F4F4F4;
+}
+
+.input__dark__theme {
+  background-color: transparent;
+  border: 1px solid #f4f4f4;
+  color: #f4f4f4;
+}
