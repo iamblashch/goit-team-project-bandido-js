@@ -47,7 +47,7 @@ const options = {
         let ourDate = new Date(selectedDates);
         ourDate = ourDate.toLocaleString().split(',')[0];
         ourDate = ourDate.replace(/\//g, '-');
-        ourDateArr = Array.from(ourDate);
+        let ourDateArr = Array.from(ourDate);
         ourDateArr = ourDateArr[6] + ourDateArr[7] + ourDateArr[8] + ourDateArr[9] + ourDateArr[5] + ourDateArr[3] + ourDateArr[4] + ourDateArr[2] + ourDateArr[0] + ourDateArr[1];
 
         return makeFetchByDate(ourDateArr, keyword)
