@@ -1,5 +1,5 @@
 import Ipbase from '@everapi/ipbase-js';
-const IPBASE_API_KEY = 'tvuotlcHnFvF9MD9zu0FUQlxPoQjJZ6ndNHm3sZZ';  //https://ipbase.com/
+const IPBASE_API_KEY = '7FsVgF0qt6nHgGtKoFY9gv6ZIili0IROFb9EmFFu';  //https://ipbase.com/
 const ipBase = new Ipbase(IPBASE_API_KEY);
 
 const OPENWEATHERMAP_API_KEY = '5019a2f2565a9e30731ac468ed123013'  //https://openweathermap.org/
