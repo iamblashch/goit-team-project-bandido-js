@@ -93,7 +93,7 @@ function CreatCardNews(news) {
       </p>
       <div class="other-line">
         <p class="date">${replaceDat}</p>
-        <p class="hyperlink"><a href="${news.url}">Read more</a></p>
+        <p class="hyperlink"><a href="${news.url}" target="_blank" rel="noreferrer noopener">Read more</a></p>
       </div>
     </div>
   </li>`;
@@ -464,7 +464,7 @@ function CreatCardNewsCategory(news) {
       </p>
       <div class="other-line">
         <p class="date">${replaceDat}</p>
-        <p class="hyperlink"><a href="${news.url}">Read more</a></p>
+        <p class="hyperlink"><a href="${news.url}" target="_blank" rel="noreferrer noopener">Read more</a></p>
       </div>
     </div>
   </li>`} catch (err) { console.log(err) }
