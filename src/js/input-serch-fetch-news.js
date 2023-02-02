@@ -88,11 +88,9 @@ function makeFetch(keyword) {
 function handleSearchInput(event) {
     event.preventDefault();
     keyword = event.currentTarget.elements.searchQuery.value;
-    console.log(keyword)
 
     makeFetch(keyword)
         .then(data => {
-            console.log(data)
             if (keyword === '') {
                 return
             }

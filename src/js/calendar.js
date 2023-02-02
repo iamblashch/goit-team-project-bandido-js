@@ -52,8 +52,6 @@ const options = {
 
         return makeFetchByDate(ourDateArr, keyword)
             .then(data => {
-              console.log(data.response.docs)
-              console.log(keyword)
               if (keyword === undefined) {
                 createMarkupIfDataEmpty()
               } else if (data.response.docs.length === 0) {
@@ -92,7 +90,7 @@ function createMarkupByInput(array) {
       <img
         class="img-news"
         src="${imageBase}"
-        alt="${data.multimedia[0].crop_name}"
+        alt="${data.abstract}"
         width="395"
         height="395"
       />
