@@ -420,6 +420,8 @@ let stopPaginationRender = false;
 function CreatCardNewsCategory(news) {
 
   order = 1;
+  let imageStart;
+  let imageBase;
 
 
   const markupArray = news.map(news => {
