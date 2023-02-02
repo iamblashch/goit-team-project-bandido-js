@@ -1932,6 +1932,12 @@ body {
   width: 288px;
 }
 
+.news-item-fav {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .news-thumb {
   position: relative;
   max-width: 288px;

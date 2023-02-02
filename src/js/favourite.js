@@ -1,25 +1,26 @@
 import imgOps from '../img/main/img-ds.png';
 
 const listFavEl = document.querySelector('.news-list-fav');
+const itemFavEl = document.querySelector('.news-item-fav');
 const favBtnEl = document.querySelector('.link-add');
 
 createFavCardsMarkup();
 
 function createFavCardsMarkup() {
     if (!localStorage.getItem('markup-news-card')) {
-    return (listFavEl.innerHTML = `<h2 class="section-news__title">This page is empty yet</h2><img src="${imgOps}" alt="Ooooops" class="news-section__img-if-empty"/>`);
+    return (itemFavEl.innerHTML = `<h2 class="section-news__title">This page is empty yet</h2><img src="${imgOps}" alt="Ooooops" class="news-section__img-if-empty"/>`);
   }
     
     const loc = localStorage.getItem('markup-news-card')
     let pars = JSON.parse(loc)
 
     pars.map(item => {
-        listFavEl.insertAdjacentHTML('beforeend', item.data)
+        itemFavEl.insertAdjacentHTML('beforeend', item.data)
     })
 }
 
 function clearFavCardsMarkup() {
-        listFavEl.innerHTML = ''
+        itemFavEl.innerHTML = ''
 }
 
 
